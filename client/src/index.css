@@ -73,6 +73,30 @@ html, body {
     background-attachment: fixed;
 }
 
+/* Custom scrollbar with gradient blue */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-light-to-dark-blue);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gradient-cyan-to-blue);
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #14b5ff rgba(0, 0, 0, 0.3);
+}
+
 /* Base reset */
 * {
     font-family: var(--font-aclonica);
