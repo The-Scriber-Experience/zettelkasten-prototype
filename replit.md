@@ -77,15 +77,33 @@ Content: No AI-generated content except layout and styling. Sample prototype not
 - Implemented pill-style tags with 50px border radius matching reference design
 - Updated all tags to use Aclonica font for visual consistency
 - Added gradient backgrounds and hover effects to tags throughout the application
+- Sidebar tags reduced to minimal size (0.55rem) for clean, compact appearance
 - Tags now have smooth transitions and subtle shadow effects
 
 ### Diataxis Note Grouping System
 - Implemented collapsible note groups in sidebar following Diataxis framework
 - Five category groups: Prototypes, Tutorials, How-to Guides, Explanations, Reference
-- Groups display note counts when populated (e.g., "PROTOTYPES (4)")
+- All groups show count including zeros for transparency (e.g., "PROTOTYPES (4)", "TUTORIALS (0)")
+- All groups start collapsed by default for clean initial view
+- Groups visually grouped with subtle background containers
+- Tighter spacing between notes for cohesive appearance
 - Empty groups show "No notes yet" placeholder to indicate available categories
 - All groups expand/collapse independently with smooth animations
 - Current sample notes categorized under "Prototypes" group
+
+### Note Metadata Refinement
+- Reorganized note header: title first, then tags (left) and ID (right)
+- Note ID badge with magical purple glow effect and square corners for vintage indexing aesthetic
+- ID displays as compact digital-style badge with subtle neon effect
+- Tags positioned below title for better visual hierarchy
+- Reduced metadata size for cleaner content presentation
+
+### Linked Notes Enhancement
+- Linked notes now display note titles instead of IDs for better readability
+- Redesigned linked note buttons with subtle, minimal styling
+- Buttons use muted colors and only highlight on hover
+- Smooth horizontal slide animation on hover
+- Changed from monospace to body font for natural reading
 
 ### User Assets Integration
 - Integrated custom dragon logo in header

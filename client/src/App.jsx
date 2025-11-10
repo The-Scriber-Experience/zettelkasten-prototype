@@ -40,6 +40,7 @@ function App() {
         <main className="main-content">
           <NoteDisplay 
             note={currentNote} 
+            allNotes={sampleNotes}
             onNoteClick={handleNoteSelect}
           />
         </main>

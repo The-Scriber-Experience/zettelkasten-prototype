@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { bibliography } from '../data/sampleNotes';
 import GraphDisplay from './GraphDisplay';
 
-function NoteDisplay({ note, onNoteClick }) {
+function NoteDisplay({ note, allNotes, onNoteClick }) {
   useEffect(() => {
     if (window.MathJax) {
       window.MathJax.typesetPromise();
@@ -69,15 +69,18 @@ function NoteDisplay({ note, onNoteClick }) {
         <div className="linked-notes">
           <h3>Linked Notes</h3>
           <div className="links-container">
-            {note.linkedNotes.map(linkedId => (
-              <button
-                key={linkedId}
-                className="linked-note-btn"
-                onClick={() => onNoteClick(linkedId)}
-              >
-                → Note {linkedId}
-              </button>
-            ))}
+            {note.linkedNotes.map(linkedId => {
+              const linkedNote = allNotes.find(n => n.id === linkedId);
+              return (
+                <button
+                  key={linkedId}
+                  className="linked-note-btn"
+                  onClick={() => onNoteClick(linkedId)}
+                >
+                  → {linkedNote ? linkedNote.title : linkedId}
+                </button>
+              );
+            })}
           </div>
         </div>
 
