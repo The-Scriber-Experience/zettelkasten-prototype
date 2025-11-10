@@ -51,7 +51,7 @@ function Sidebar({ notes, currentNoteId, onNoteSelect }) {
                 onClick={() => toggleGroup(groupKey)}
               >
                 <h3 className="group-title">
-                  {group.label} {groupNotes.length > 0 && `(${groupNotes.length})`}
+                  {group.label} ({groupNotes.length})
                 </h3>
                 <span className={`group-toggle ${openGroups[groupKey] ? 'expanded' : ''}`}>
                   ▶
