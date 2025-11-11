@@ -57,11 +57,10 @@ body.pretext {
 
 /* Header & Masthead */
 .ptx-masthead {
-  background: var(--gradient-cyan-to-blue) !important;
-  border-bottom: 2px solid rgba(0, 232, 255, 0.5);
+  background: rgba(0, 0, 0, 0.6) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 232, 255, 0.3);
 }
 
 .ptx-masthead .title-container {
@@ -72,24 +71,27 @@ body.pretext {
 .ptx-masthead .title-container h1 {
   font-family: var(--font-heading) !important;
   font-size: 1.8rem !important;
-  color: #0d1117 !important;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  font-weight: bold;
+  background: var(--gradient-cyan-to-blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .ptx-masthead .title-container h1 a {
-  color: #0d1117 !important;
+  background: var(--gradient-cyan-to-blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .ptx-masthead .byline {
-  color: rgba(13, 17, 23, 0.8) !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: var(--color-muted) !important;
 }
 
 .ptx-masthead .logo-link img {
   height: 50px;
   margin-right: 1rem;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 0 8px rgba(0, 232, 255, 0.4));
 }
 
 /* Add logo before title */
@@ -103,13 +105,13 @@ body.pretext {
   background-repeat: no-repeat;
   margin-right: 1rem;
   vertical-align: middle;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 0 8px rgba(0, 232, 255, 0.4));
 }
 
 /* Sidebar & TOC */
 .ptx-sidebar {
   background: rgba(0, 0, 0, 0.6) !important;
-  border-right: 1px solid rgba(93, 219, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -121,9 +123,17 @@ body.pretext {
 /* TOC Chapter headers (Prototypes, Tutorials, etc.) */
 .ptx-toc ul.structural > li > .codenumber,
 .ptx-toc ul.structural > li > .title {
-  color: #5ddbff !important;
+  background: var(--gradient-cyan-to-blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: bold;
-  text-shadow: 0 0 10px rgba(93, 219, 255, 0.3);
+}
+
+/* TOC links and items */
+.ptx-toc a {
+  color: var(--color-text) !important;
+  transition: all 0.2s ease;
 }
 
 .ptx-toc ul.structural li {
@@ -135,26 +145,28 @@ body.pretext {
 }
 
 .ptx-toc ul.structural li:hover {
-  background: rgba(93, 219, 255, 0.08);
-  border-color: rgba(93, 219, 255, 0.3);
+  background: rgba(20, 181, 255, 0.05);
+  border-color: rgba(20, 181, 255, 0.2);
   transform: translateX(4px);
 }
 
 /* Active/selected section - subtle gradient glow */
 .ptx-toc ul.structural li.active,
 .ptx-toc li.active {
-  background: linear-gradient(135deg, rgba(93, 219, 255, 0.2), rgba(121, 82, 245, 0.15)) !important;
-  border-color: rgba(93, 219, 255, 0.4) !important;
-  box-shadow: 0 0 15px rgba(93, 219, 255, 0.2);
+  background: linear-gradient(135deg, rgba(20, 181, 255, 0.12), rgba(121, 82, 245, 0.08)) !important;
+  border-color: rgba(20, 181, 255, 0.3) !important;
+  box-shadow: 0 0 12px rgba(20, 181, 255, 0.15);
 }
 
 .ptx-toc ul.structural li.active a,
 .ptx-toc li.active a,
 .ptx-toc li.active .codenumber,
 .ptx-toc li.active .title {
-  color: #5ddbff !important;
+  background: var(--gradient-cyan-to-blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: bold;
-  text-shadow: 0 0 10px rgba(93, 219, 255, 0.4);
 }
 
 /* Main Content Area */
