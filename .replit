@@ -21,18 +21,18 @@ args = "PreTeXt Server"
 name = "PreTeXt Server"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "pretext view web --access public --port 5000"
-waitForPort = 5000
-
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd output/web && python -m http.server 5000"
+waitForPort = 5000
 
 [[ports]]
 localPort = 5000
 externalPort = 80
 
 [[ports]]
-localPort = 42093
+localPort = 40175
 externalPort = 3000
