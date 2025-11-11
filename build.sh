@@ -26,6 +26,12 @@ for file in output/web/*.html; do
     # Insert the favicon link in the <head>
     sed -i 's|</head>|<link rel="icon" type="image/png" href="favicon.png">\n</head>|' "$file"
   fi
+  
+  # Update footer with custom branding
+  if grep -q "ptx-content-footer" "$file"; then
+    # Replace footer content with eigenscribe copyright
+    sed -i 's|<footer class="ptx-content-footer">.*</footer>|<footer class="ptx-content-footer"><span class="copyright">eigenscribe © 2025</span></footer>|' "$file"
+  fi
 done
 
 echo "Build complete! Custom styling and assets applied."

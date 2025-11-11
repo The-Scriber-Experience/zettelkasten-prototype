@@ -377,7 +377,33 @@ body.pretext {
   cursor: not-allowed;
 }
 
-/* Footer */
+/* Content buttons */
+.ptx-content .button,
+.ptx-content button,
+.ptx-content input[type="button"],
+.ptx-content input[type="submit"] {
+  background: linear-gradient(135deg, rgba(20, 181, 255, 0.15), rgba(121, 82, 245, 0.1)) !important;
+  border: 1px solid rgba(20, 181, 255, 0.3) !important;
+  color: var(--color-text) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px !important;
+  font-family: var(--font-heading) !important;
+  font-size: 0.9rem !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer;
+}
+
+.ptx-content .button:hover,
+.ptx-content button:hover,
+.ptx-content input[type="button"]:hover,
+.ptx-content input[type="submit"]:hover {
+  background: linear-gradient(135deg, rgba(20, 181, 255, 0.25), rgba(121, 82, 245, 0.15)) !important;
+  border-color: rgba(20, 181, 255, 0.5) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(20, 181, 255, 0.2);
+}
+
+/* Footer navigation buttons */
 .ptx-content-footer {
   background: rgba(0, 0, 0, 0.6);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -387,6 +413,37 @@ body.pretext {
   margin-top: 4rem;
   text-align: center;
   color: var(--color-muted);
+  position: relative;
+}
+
+/* Custom copyright footer after navigation */
+.ptx-content-footer::after {
+  content: '';
+  display: block;
+  width: 100%;
+  padding: 1.5rem 0 0 0;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background-image: url('logo.png');
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  padding-top: 45px;
+  filter: drop-shadow(0 0 6px rgba(0, 232, 255, 0.3));
+}
+
+.ptx-page > .ptx-main::after {
+  content: 'eigenscribe © 2025';
+  display: block;
+  text-align: center;
+  font-family: var(--font-heading);
+  background: var(--gradient-cyan-to-blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1rem;
+  padding: 1rem 0 2rem 0;
+  margin-top: 1rem;
 }
 
 /* Bibliography */
