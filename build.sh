@@ -36,7 +36,7 @@ for file in output/web/*.html; do
   # Remove all content from page footer and replace with custom branding
   if grep -q 'id="ptx-page-footer"' "$file"; then
     # Use perl for multiline replacement - match everything up to </body>
-    perl -i -0pe 's|<div id="ptx-page-footer" class="ptx-page-footer">.*?</div>\s*</body>|<div id="ptx-page-footer" class="ptx-page-footer" style="background: rgba(0, 0, 0, 0.7); border-top: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 2rem 1rem; text-align: center;"><img src="external/logo.png" alt="eigenscribe logo" style="width: 35px; height: 35px; display: block; margin: 0 auto 0.75rem; filter: drop-shadow(0 0 8px rgba(0, 232, 255, 0.5));"><p style="font-family: Aclonica, sans-serif; background: linear-gradient(130deg, #00ffee, #0a95eb); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-size: 1rem; margin: 0;">eigenscribe © 2025</p></div>\n</body>|gs' "$file"
+    perl -i -0pe 's|<div id="ptx-page-footer" class="ptx-page-footer">.*?</div>\s*</body>|<div id="ptx-page-footer" class="ptx-page-footer" style="background: rgba(0, 0, 0, 0.7); border-top: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 2rem 1rem;"><div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem;"><img src="external/logo.png" alt="eigenscribe logo" style="width: 35px; height: 35px; filter: drop-shadow(0 0 8px rgba(0, 232, 255, 0.5));"><p style="font-family: Aclonica, sans-serif; background: linear-gradient(130deg, #00ffee, #0a95eb); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-size: 1rem; margin: 0;">eigenscribe © 2025</p></div></div>\n</body>|gs' "$file"
   fi
 done
 

@@ -79,7 +79,7 @@ Content: No AI-generated content except layout and styling. Sample prototype not
 - **Navigation Styling**: All buttons (top nav and footer) use glassmorphic gradient backgrounds with cyan-to-purple theme and smooth hover animations
 - **Footer Branding**: Custom eigenscribe © 2025 footer with logo and gradient text, centered navigation buttons  
 - **Selected Section Styling**: Active TOC sections have subtle cyan background (`rgba(20, 181, 255, 0.15)`) with cyan border
-- **Page Footer**: Custom eigenscribe © 2025 branding replaces default PreTeXt/Runestone/MathJax attribution links at page bottom
+- **Page Footer**: Custom eigenscribe © 2025 branding with logo and copyright text side-by-side, centered together; replaces default PreTeXt/Runestone/MathJax attribution links
 - **Theme Button Removed**: Light/dark theme switcher hidden via CSS (`#light-dark-button`) - dark glassmorphic theme only
 
 
