@@ -80,6 +80,7 @@ Content: No AI-generated content except layout and styling. Sample prototype not
 - **Footer Branding**: Custom eigenscribe © 2025 footer with logo and gradient text, centered navigation buttons  
 - **Selected Section Styling**: Active TOC sections have subtle cyan background (`rgba(20, 181, 255, 0.15)`) with cyan border
 - **Page Footer**: Custom eigenscribe © 2025 branding replaces default PreTeXt/Runestone/MathJax attribution links at page bottom
+- **Theme Button Removed**: Light/dark theme switcher hidden via CSS (`#light-dark-button`) - dark glassmorphic theme only
 
 
 ## Repository Structure

@@ -601,6 +601,14 @@ body.pretext {
   font-family: var(--font-heading);
 }
 
+/* Hide theme switcher button - light theme not supported */
+#light-dark-button,
+.light-dark-button,
+button.light-dark-button {
+  display: none !important;
+  visibility: hidden !important;
+}
+
 /* Responsive Design */
 @media (max-width: 800px) {
   .ptx-page > .ptx-main {
