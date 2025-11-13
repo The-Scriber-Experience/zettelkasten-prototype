@@ -125,10 +125,13 @@ body.pretext {
 
 /* Sidebar & TOC */
 .ptx-page {
+  display: grid !important;
   grid-template-columns: 350px 1fr !important;
+  grid-template-areas: "sidebar main" !important;
 }
 
 .ptx-sidebar {
+  grid-area: sidebar !important;
   width: 350px !important;
   min-width: 350px !important;
   max-width: 350px !important;
@@ -140,6 +143,10 @@ body.pretext {
   height: 100vh !important;
   position: sticky !important;
   top: 0 !important;
+}
+
+.ptx-main {
+  grid-area: main !important;
 }
 
 .ptx-sidebar .ptx-toc {
