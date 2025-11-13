@@ -37,9 +37,9 @@ Content: No AI-generated content except layout and styling. Sample prototype not
 - **Collapsible Groups**: Smooth expand/collapse transitions for note category organization
 
 ### Development Workflow
-- **Client Development**: Vite dev server on port 3000 with HMR
-- **Backend Development**: Flask development server with CORS for API testing
-- **Code Quality**: ESLint configuration with React-specific rules and hooks linting
+- **PreTeXt Development**: Custom `build.sh` script for building and CSS injection
+- **Live Preview**: PreTeXt server on port 5000 with automatic rebuilds
+- **Content Editing**: Direct XML editing in `/source/` directory
 
 ## External Dependencies
 
@@ -54,12 +54,17 @@ Content: No AI-generated content except layout and styling. Sample prototype not
 - **sed**: Text processing for CSS injection into HTML files
 
 ### Asset Management
-- **Custom Assets**: Dragon logo, triquetra favicon, wisp background with glowing orbs, and orb footer decoration
-- **Static Assets**: Served from `/client/public/assets/` during development and `/public/assets/` in production
-- **Build Assets**: Compiled CSS and JavaScript served from `/client/dist/`
+- **Custom Assets**: Logo, favicon, wisp background, orb decorations, ember and moon graphics
+- **Static Assets**: Stored in `/assets/` directory and injected into PreTeXt build output
 - **Font System**: Aclonica for headings/UI, Merriweather for body text, Fira Code for code blocks
 
 ## Recent Changes
+
+### Repository Cleanup (Nov 13, 2025)
+- **Added .gitignore**: Comprehensive ignore rules for Python, PreTeXt output, caches, and temporary files
+- **Removed Legacy Code**: Deleted deprecated React client folder (project now fully on PreTeXt)
+- **Cleaned Temporary Files**: Removed development logs, attached assets, and empty directories
+- **Updated Documentation**: Streamlined replit.md to reflect current PreTeXt-only architecture
 
 ### PreTeXt Conversion (Nov 13, 2025)
 - **Complete Migration**: Converted entire project from React/Vite to PreTeXt XML format
@@ -72,62 +77,10 @@ Content: No AI-generated content except layout and styling. Sample prototype not
 - **Development Server**: PreTeXt server running on port 5000 with live preview capability
 - **Project Structure**: Clean XML organization with source files in `/source/`, assets in `/assets/`, output in `/output/web/`
 - **Navigation Styling**: All buttons (top nav and footer) use glassmorphic gradient backgrounds with cyan-to-purple theme and smooth hover animations
-- **Footer Branding**: Custom eigenscribe © 2025 footer with dragon logo and gradient text, centered navigation buttons  
-- **Selected Section Styling**: Active TOC sections have subtle cyan background (`rgba(20, 181, 255, 0.15)`) with cyan border, matching original React design
-- **Page Footer**: Custom eigenscribe © 2025 branding with dragon logo replaces default PreTeXt/Runestone/MathJax attribution links at page bottom
+- **Footer Branding**: Custom eigenscribe © 2025 footer with logo and gradient text, centered navigation buttons  
+- **Selected Section Styling**: Active TOC sections have subtle cyan background (`rgba(20, 181, 255, 0.15)`) with cyan border
+- **Page Footer**: Custom eigenscribe © 2025 branding replaces default PreTeXt/Runestone/MathJax attribution links at page bottom
 
-### Original React Version (Nov 10, 2025)
-
-### Tag System Enhancement
-- Implemented pill-style tags with 50px border radius matching reference design
-- Updated all tags to use Aclonica font for visual consistency
-- Added gradient backgrounds and hover effects to tags throughout the application
-- Sidebar tags reduced to minimal size (0.55rem) for clean, compact appearance
-- Tags now have smooth transitions and subtle shadow effects
-
-### Diataxis Note Grouping System
-- Implemented collapsible note groups in sidebar following Diataxis framework
-- Five category groups: Prototypes, Tutorials, How-to Guides, Explanations, Reference
-- All groups show count including zeros for transparency (e.g., "PROTOTYPES (4)", "TUTORIALS (0)")
-- All groups start collapsed by default for clean initial view
-- Groups visually grouped with subtle background containers
-- Tighter spacing between notes for cohesive appearance
-- Empty groups show "No notes yet" placeholder to indicate available categories
-- All groups expand/collapse independently with smooth animations
-- Current sample notes categorized under "Prototypes" group
-
-### Note Metadata Refinement
-- Reorganized note header: title first, then tags (left) and ID (right)
-- Note ID badge with magical purple glow effect and square corners for vintage indexing aesthetic
-- ID displays as compact digital-style badge with subtle neon effect
-- Tags positioned below title for better visual hierarchy
-- Reduced metadata size for cleaner content presentation
-
-### Linked Notes Enhancement
-- Linked notes now display note titles instead of IDs for better readability
-- Redesigned linked note buttons with subtle, minimal styling
-- Buttons use muted colors and only highlight on hover
-- Smooth horizontal slide animation on hover
-- Changed from monospace to body font for natural reading
-
-### User Assets Integration
-- Integrated custom dragon logo in header
-- Set triquetra knot as browser favicon
-- Applied mystical wisp background with glowing cyan orbs
-- Added orb decoration to footer with soft glow effect
-
-### Knowledge Graph Visualization
-- Implemented interactive knowledge graph page to visualize note network connections
-- Physics-based force-directed graph shows all notes as nodes with bidirectional links as edges
-- Nodes color-coded by Diataxis category (purple for prototypes, with distinct colors for other categories)
-- Node sizes reflect connection count - more linked notes appear larger
-- Custom canvas rendering with Aclonica font labels and glowing effects matching site aesthetics
-- Click-to-navigate functionality - clicking any node navigates to that note in the main view
-- Header navigation with "Notes" and "Graph" links for seamless page switching
-- Legend showing category color mappings for easy interpretation
-- Glassmorphic container with backdrop blur maintains visual consistency with rest of app
-- Graph auto-zooms to fit all nodes on load for optimal initial view
-- Responsive design with mobile-optimized layouts
 
 ## Repository Structure
 
@@ -144,15 +97,22 @@ source/                    # PreTeXt XML source files
 └── backmatter.ptx        # Bibliography and index
 assets/                   # Static assets (logo, images, custom CSS)
 ├── custom-theme.css      # Custom styling matching original design
-├── dragon.png           # Dragon logo
-└── triquetra.png        # Triquetra favicon
-output/web/               # Generated HTML output (not committed)
+├── ember.png            # Ember graphic
+├── favicon.png          # Browser favicon
+├── logo.png             # Header logo
+├── moon.png             # Moon graphic
+├── orb.png              # Orb decoration
+└── wisp.jpg             # Background image with glowing effects
+output/                   # Generated HTML output (gitignored)
 publication/              # Publication settings
 project.ptx               # Project manifest
 build.sh                  # Custom build script (builds + injects CSS)
 xsl/                      # Custom XSL stylesheets
-client/                   # Original React version (preserved for reference)
+requirements.txt          # Python dependencies (PreTeXt CLI)
+.gitignore               # Git ignore configuration
 replit.md                 # Project documentation
+README.md                # PreTeXt project README
+USAGE_GUIDE.md           # User guide for the journal
 ```
 
 ## Sample Notes
