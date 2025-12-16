@@ -18,6 +18,7 @@ mkdir -p output/web/graph
 cp graph-module/graph.js output/web/graph/
 cp graph-module/graph.css output/web/graph/
 cp graph-module/notes-graph.json output/web/graph/
+cp assets/graph-toggle.js output/web/graph/
 
 # Also add override to ALL CSS files including runestone
 for rcss in output/web/_static/prefix-*.css output/web/_static/pretext/css/*.css; do
@@ -88,6 +89,11 @@ for file in output/web/*.html; do
   if ! grep -q "custom-theme.css" "$file"; then
     # Insert the link tag in head
     sed -i 's|</head>|<link rel="stylesheet" type="text/css" href="external/custom-theme.css">\n</head>|' "$file"
+  fi
+  
+  # Inject graph toggle script before closing body tag (module type for dynamic import support)
+  if ! grep -q "graph-toggle.js" "$file"; then
+    sed -i 's|</body>|<script type="module" src="graph/graph-toggle.js"></script>\n</body>|' "$file"
   fi
   
   # Direct inline style injection for toc-frontmatter.contains-active
