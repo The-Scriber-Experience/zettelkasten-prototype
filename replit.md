@@ -105,6 +105,20 @@ See the tutorial section in the journal itself for complete deployment instructi
 - **Theme Button Removed**: Light/dark theme switcher hidden via CSS (`#light-dark-button`) - dark glassmorphic theme only
 
 
+## Recent Additions
+
+### Graph Visualization Module (Dec 16, 2025)
+- **Location**: `graph-module/`
+- **Purpose**: Framework-agnostic D3.js graph visualization for notes
+- **Files**: graph.html, graph.js, graph.css, notes-graph.json schema
+- **Features**: Self-contained module, hover tooltips, click-to-navigate, dark mode toggle, zoom controls
+
+### Obsidian to PreTeXt Pipeline (Dec 16, 2025)
+- **Location**: `obsidian-to-pretext/`
+- **Purpose**: Convert Obsidian Markdown notes to PreTeXt XML
+- **Files**: convert.py, MAPPING.md, README.md, example notes
+- **Features**: YAML frontmatter, wikilinks → xref, MathJax preservation, backlink generation
+
 ## Repository Structure
 
 PreTeXt project structure:
