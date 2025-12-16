@@ -19,6 +19,7 @@ cp graph-module/graph.js output/web/graph/
 cp graph-module/graph.css output/web/graph/
 cp graph-module/notes-graph.json output/web/graph/
 cp assets/graph-toggle.js output/web/graph/
+cp assets/d3.min.js output/web/graph/
 
 # Also add override to ALL CSS files including runestone
 for rcss in output/web/_static/prefix-*.css output/web/_static/pretext/css/*.css; do
@@ -93,7 +94,7 @@ for file in output/web/*.html; do
   
   # Inject D3 and graph toggle scripts before closing body tag
   if ! grep -q "graph-toggle.js" "$file"; then
-    sed -i 's|</body>|<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>\n<script src="graph/graph-toggle.js"></script>\n</body>|' "$file"
+    sed -i 's|</body>|<script src="graph/d3.min.js"></script>\n<script src="graph/graph-toggle.js"></script>\n</body>|' "$file"
   fi
   
   # Direct inline style injection for toc-frontmatter.contains-active
