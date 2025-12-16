@@ -187,6 +187,23 @@ function init() {
       linkCounts.set(l.target, (linkCounts.get(l.target) || 0) + 1);
     });
 
+    // Calculate min/max connections for color scale (pink to purple)
+    const connectionValues = nodes.map(n => linkCounts.get(n.id) || 0);
+    const minConnections = Math.min(...connectionValues);
+    const maxConnections = Math.max(...connectionValues);
+    
+    // Color scale: pink (#ec4899) for min connections, purple (#7c3aed) for max
+    function getNodeColor(nodeId) {
+      const connections = linkCounts.get(nodeId) || 0;
+      if (maxConnections === minConnections) return '#a855f7'; // Middle purple if all same
+      const t = (connections - minConnections) / (maxConnections - minConnections);
+      // Interpolate from pink to purple
+      const r = Math.round(236 + (124 - 236) * t);
+      const g = Math.round(72 + (58 - 72) * t);
+      const b = Math.round(153 + (237 - 153) * t);
+      return `rgb(${r}, ${g}, ${b})`;
+    }
+
     const simulation = d3.forceSimulation(nodes)
       .force('link', d3.forceLink(processedLinks).id(d => d.id).distance(100))
       .force('charge', d3.forceManyBody().strength(-300))
@@ -207,7 +224,7 @@ function init() {
       .data(nodes)
       .join('circle')
       .attr('r', d => getNodeRadius(d, linkCounts))
-      .attr('fill', '#14b5ff')
+      .attr('fill', d => getNodeColor(d.id))
       .attr('cursor', 'pointer')
       .call(drag(d3, simulation));
 
@@ -222,7 +239,7 @@ function init() {
       .style('pointer-events', 'none');
 
     node.on('mouseenter', function(event, d) {
-      d3.select(this).attr('fill', '#a855f7');
+      d3.select(this).attr('fill', '#00e8ff'); // Bright cyan on hover
       
       const connectedIds = new Set([d.id]);
       processedLinks.forEach(l => {
@@ -245,8 +262,8 @@ function init() {
       positionTooltip(event, tooltip, container);
     });
 
-    node.on('mouseleave', function() {
-      d3.select(this).attr('fill', '#14b5ff');
+    node.on('mouseleave', function(event, d) {
+      d3.select(this).attr('fill', getNodeColor(d.id)); // Restore original color
       node.style('opacity', 1);
       link.style('opacity', 1);
       label.style('opacity', 0.8);

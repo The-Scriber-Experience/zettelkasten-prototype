@@ -502,24 +502,49 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
 
 /* Code blocks */
 .ptx-content code.code-inline,
+/* Aurora-inspired code block theme */
 .ptx-content pre {
   font-family: var(--font-mono) !important;
-  background: rgba(0, 0, 0, 0.4) !important;
-  color: var(--color-math) !important;
-  border: 1px solid rgba(0, 245, 219, 0.3);
-  border-radius: 4px;
+  background: rgba(15, 18, 25, 0.95) !important;
+  color: #d4d4d4 !important;
+  border: 1px solid rgba(136, 192, 208, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .ptx-content code.code-inline {
   padding: 2px 6px;
   font-size: 0.9em;
+  background: rgba(46, 52, 64, 0.9) !important;
+  color: #88c0d0 !important;
+  border-radius: 4px;
 }
 
 .ptx-content pre {
-  padding: 1rem;
+  padding: 1.25rem;
   margin: 1rem 0;
   overflow-x: auto;
 }
+
+/* Aurora syntax highlighting colors */
+.ptx-content pre .keyword,
+.ptx-content pre .kw { color: #b48ead !important; } /* Purple - keywords */
+.ptx-content pre .string,
+.ptx-content pre .st { color: #a3be8c !important; } /* Green - strings */
+.ptx-content pre .comment,
+.ptx-content pre .co { color: #616e88 !important; font-style: italic; } /* Gray - comments */
+.ptx-content pre .function,
+.ptx-content pre .fu { color: #88c0d0 !important; } /* Cyan - functions */
+.ptx-content pre .number,
+.ptx-content pre .dv { color: #b48ead !important; } /* Purple - numbers */
+.ptx-content pre .operator,
+.ptx-content pre .op { color: #81a1c1 !important; } /* Blue - operators */
+.ptx-content pre .variable,
+.ptx-content pre .va { color: #d8dee9 !important; } /* Light gray - variables */
+.ptx-content pre .type,
+.ptx-content pre .dt { color: #8fbcbb !important; } /* Teal - types */
+.ptx-content pre .constant,
+.ptx-content pre .cn { color: #ebcb8b !important; } /* Yellow - constants */
 
 /* Lists */
 .ptx-content ol, .ptx-content ul {
