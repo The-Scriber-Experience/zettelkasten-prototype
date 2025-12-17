@@ -361,14 +361,28 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
 .ptx-toc li.active .title,
 .ptx-toc .toc-item.active a,
 .ptx-toc .toc-item.active .codenumber,
-.ptx-toc .toc-item.active .title,
-.ptx-toc .toc-item.contains-active > .toc-title-box a,
-.ptx-toc .toc-item.contains-active > .toc-title-box .title {
+.ptx-toc .toc-item.active .title {
   background: var(--gradient-cyan-to-blue);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
+}
+
+/* Folder titles when expanded - blue to purple gradient for contrast against blue background */
+.ptx-toc .toc-item.contains-active > .toc-title-box a,
+.ptx-toc .toc-item.contains-active > .toc-title-box .title,
+.ptx-toc .toc-chapter.contains-active > .toc-title-box a,
+.ptx-toc .toc-chapter.contains-active > .toc-title-box .title,
+.ptx-toc .toc-frontmatter.contains-active > .toc-title-box a,
+.ptx-toc .toc-frontmatter.contains-active > .toc-title-box .title,
+.ptx-toc .toc-backmatter.contains-active > .toc-title-box a,
+.ptx-toc .toc-backmatter.contains-active > .toc-title-box .title {
+  background: linear-gradient(130deg, #60a5fa, #a78bfa, #c084fc) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: bold !important;
 }
 
 /* Main Content Area */
