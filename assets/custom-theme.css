@@ -986,29 +986,30 @@ dialog#ptx-search-modal button[type="button"]:hover,
 }
 
 /* PreTeXt Search UI - Main Container */
+.ptx-navbar .searchbox,
 .searchbox {
-  position: relative;
+  position: relative !important;
+  overflow: visible !important;
 }
 
-/* Search modal - centered overlay */
+/* Search modal - absolutely positioned dropdown overlay */
 .searchresultsplaceholder,
 #searchresultsplaceholder {
   display: none;
-  position: fixed !important;
-  top: 140px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  right: 0 !important;
+  left: auto !important;
+  transform: none !important;
   z-index: 10000 !important;
   background: rgba(13, 17, 23, 0.98) !important;
-  border: 1px solid rgba(20, 181, 255, 0.2) !important;
-  border-radius: 14px !important;
+  border: 1px solid rgba(20, 181, 255, 0.3) !important;
+  border-radius: 12px !important;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(20, 181, 255, 0.08) !important;
-  padding: 20px !important;
-  width: calc(100vw - 32px) !important;
-  max-width: 480px !important;
-  min-width: 280px !important;
-  max-height: calc(100vh - 180px) !important;
-  overflow: hidden !important;
+  padding: 16px !important;
+  width: clamp(320px, 50vw, 480px) !important;
+  max-height: calc(100vh - 200px) !important;
+  overflow-y: auto !important;
   flex-direction: column !important;
   box-sizing: border-box !important;
 }
@@ -1021,15 +1022,13 @@ dialog#ptx-search-modal button[type="button"]:hover,
 /* Search controls row */
 .search-results-controls {
   display: flex !important;
-  gap: 8px !important;
+  gap: 10px !important;
   align-items: center !important;
   margin-bottom: 12px !important;
   padding-bottom: 12px !important;
   border-bottom: 1px solid rgba(20, 181, 255, 0.15) !important;
   width: 100% !important;
-  max-width: 100% !important;
   box-sizing: border-box !important;
-  overflow: hidden !important;
 }
 
 /* Search input */
@@ -1037,14 +1036,13 @@ dialog#ptx-search-modal button[type="button"]:hover,
 .ptxsearch {
   flex: 1 1 auto !important;
   min-width: 0 !important;
-  max-width: calc(100% - 50px) !important;
   background: rgba(18, 22, 30, 0.95) !important;
   border: 1px solid rgba(20, 181, 255, 0.25) !important;
   border-radius: 10px !important;
   color: #e0e0e0 !important;
-  padding: 10px 12px !important;
+  padding: 10px 14px !important;
   font-family: 'Aclonica', sans-serif !important;
-  font-size: 13px !important;
+  font-size: 14px !important;
   box-sizing: border-box !important;
   transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
 }
@@ -1068,15 +1066,16 @@ dialog#ptx-search-modal button[type="button"]:hover,
   border: 1px solid rgba(20, 181, 255, 0.25) !important;
   border-radius: 10px !important;
   color: #14b5ff !important;
-  width: 38px !important;
-  height: 38px !important;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
   padding: 0 !important;
   cursor: pointer !important;
   transition: all 0.2s ease !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  flex: 0 0 38px !important;
+  flex-shrink: 0 !important;
 }
 
 #closesearchresults:hover {
