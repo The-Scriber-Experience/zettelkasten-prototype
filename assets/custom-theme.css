@@ -250,7 +250,7 @@ nav.ptx-toc .toc-item.contains-active .toc-title-box,
 }
 
 /* SPECIAL: Override for toc-frontmatter which uses different color palette */
-/* Frontmatter/backmatter folder styling - consistent dark purple background */
+/* ALL folder styling - consistent dark purple background (frontmatter, chapters, backmatter) */
 li.toc-item.toc-frontmatter,
 li.toc-item.toc-frontmatter.contains-active,
 li.toc-item.toc-frontmatter.active,
@@ -266,13 +266,7 @@ li.toc-item.toc-backmatter.active,
 .ptx-toc li.toc-backmatter.contains-active,
 .ptx-toc li.toc-backmatter.active,
 nav.ptx-toc li.toc-backmatter.contains-active,
-#ptx-sidebar .ptx-toc li.toc-backmatter.contains-active {
-  background: rgba(20, 18, 35, 0.95) !important;
-  border: 1px solid rgba(120, 100, 180, 0.4) !important;
-  border-radius: 12px !important;
-}
-
-/* Chapter folder styling - same consistent background */
+#ptx-sidebar .ptx-toc li.toc-backmatter.contains-active,
 li.toc-item.toc-chapter,
 li.toc-item.toc-chapter.contains-active,
 li.toc-item.toc-chapter.active,
@@ -280,9 +274,12 @@ li.toc-item.toc-chapter.active,
 .ptx-toc li.toc-chapter.contains-active,
 .ptx-toc li.toc-chapter.active,
 nav.ptx-toc li.toc-chapter.contains-active,
-#ptx-sidebar .ptx-toc li.toc-chapter.contains-active {
-  background: rgba(20, 18, 35, 0.95) !important;
-  border: 1px solid rgba(120, 100, 180, 0.4) !important;
+#ptx-sidebar .ptx-toc li.toc-chapter.contains-active,
+nav#ptx-toc .toc-chapter,
+nav#ptx-toc .toc-chapter.contains-active,
+nav#ptx-toc .toc-chapter.active {
+  background: rgba(15, 12, 28, 0.97) !important;
+  border: 1px solid rgba(100, 80, 160, 0.45) !important;
   border-radius: 12px !important;
 }
 
@@ -318,12 +315,12 @@ nav#ptx-toc.ptx-toc .toc-item.toc-frontmatter.contains-active,
 nav#ptx-toc.ptx-toc.depth2 ul.structural .toc-item.contains-active,
 nav#ptx-toc.ptx-toc.depth2 ul.structural ul.structural .toc-item.contains-active,
 #ptx-sidebar .ptx-toc .toc-item.contains-active {
-  background: rgba(20, 18, 35, 0.95) !important;
-  border: 1px solid rgba(120, 100, 180, 0.4) !important;
+  background: rgba(15, 12, 28, 0.97) !important;
+  border: 1px solid rgba(100, 80, 160, 0.45) !important;
   border-radius: 12px !important;
 }
 
-/* Active leaf item (article/note selection) - slightly lighter with purple accent */
+/* Active leaf item (article/note selection) - same dark styling */
 .ptx-toc ul.structural li.active,
 .ptx-toc li.active,
 .ptx-toc .toc-item.active,
@@ -334,8 +331,8 @@ nav.ptx-toc .toc-item.active,
 .ptx-toc .toc-backmatter.active,
 nav#ptx-toc.ptx-toc .toc-item.active:not(:has(.toc-item.active)),
 #ptx-sidebar .ptx-toc .toc-item.active {
-  background: rgba(20, 18, 35, 0.95) !important;
-  border: 1px solid rgba(120, 100, 180, 0.4) !important;
+  background: rgba(15, 12, 28, 0.97) !important;
+  border: 1px solid rgba(100, 80, 160, 0.45) !important;
   border-radius: 12px !important;
 }
 
@@ -344,15 +341,15 @@ nav#ptx-toc.ptx-toc .toc-item.active:not(:has(.toc-item.active)),
 .ptx-toc ul.structural > li.contains-active,
 .ptx-toc > ul > li.active,
 .ptx-toc > ul > li.contains-active {
-  background: rgba(20, 18, 35, 0.95) !important;
-  border: 1px solid rgba(120, 100, 180, 0.4) !important;
+  background: rgba(15, 12, 28, 0.97) !important;
+  border: 1px solid rgba(100, 80, 160, 0.45) !important;
   border-radius: 12px !important;
 }
 
 /* Nested items inside expanded folders - slightly lighter */
 .ptx-toc .toc-item.active .toc-item,
 .ptx-toc .toc-item.contains-active .toc-item {
-  background: rgba(25, 22, 40, 0.9) !important;
+  background: rgba(20, 16, 35, 0.95) !important;
   border-radius: 12px !important;
 }
 
@@ -361,8 +358,8 @@ nav#ptx-toc.ptx-toc .toc-item.active:not(:has(.toc-item.active)),
 .ptx-toc .toc-item.contains-active .toc-item.active,
 .ptx-toc .toc-item.active:not(:has(.toc-item)),
 nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
-  background: rgba(80, 60, 120, 0.4) !important;
-  border: 1px solid rgba(160, 130, 220, 0.5) !important;
+  background: rgba(60, 45, 100, 0.5) !important;
+  border: 1px solid rgba(140, 110, 200, 0.55) !important;
   border-radius: 12px !important;
 }
 
