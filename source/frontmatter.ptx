@@ -3,20 +3,19 @@
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
   <bibinfo>
   
-    <author>
-      <personname>Your Name</personname>
+    <author>eigenscribe</personname>
     </author>
     <date>
       <today />
     </date>
 
     <website>
-      <url href="#">Math Journal</url>
+      <url href="#">There and Back Again</url>
     </website>
 
     <copyright>
-      <year>2024<ndash />2025</year>
-      <holder>Your Name</holder>
+      <year>2025<ndash />2026</year>
+      <holder>Eigenscribe Inc.</holder>
       <shortlicense> 
         This work is your personal mathematical knowledge base using the Zettelkasten method.
       </shortlicense>
