@@ -179,4 +179,5 @@ for file in output/web/*.html; do
   fi
 done
 
-echo "Build complete! Custom styling and assets applied."
+
+echo "✅ Build complete! Custom styling and assets applied."

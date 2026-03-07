@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
+<frontmatter xml:id="frontmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
   <bibinfo>
   
-    <author>eigenscribe</personname>
+    <author> 
+      <personname />
+      <affiliation>
+        <organization>Eigenscribe Inc</organization>
+      </affiliation>
     </author>
     <date>
       <today />
     </date>
 
     <website>
-      <url href="#">There and Back Again</url>
+      <url href="#">https://eigenscribe.github.io/there-and-back-again/research-journal.html</url>
     </website>
 
     <copyright>
       <year>2025<ndash />2026</year>
-      <holder>Eigenscribe Inc.</holder>
+      <holder>Eigenscribe Inc</holder>
       <shortlicense> 
-        This work is your personal mathematical knowledge base using the Zettelkasten method.
+        Please cite this work as: "There and Back Again: A Zettelkasten for Eigenscribe Inc, 2025-2026."
       </shortlicense>
     </copyright>
   
