@@ -4,9 +4,9 @@
   <!-- we first include a file which contains the docinfo element: -->
   <xi:include href="./docinfo.ptx" />
 
-  <book xml:id="math-journal">
-    <title>Math Journal</title>
-    <subtitle>A Zettelkasten Approach</subtitle>
+  <book xml:id="zettelkasten" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>There and Back Again</title>
+    <subtitle>A Zettelkasten for Eigenscribe Inc</subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />

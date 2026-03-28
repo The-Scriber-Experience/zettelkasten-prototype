@@ -1,4 +1,5 @@
 annotated-types==0.7.0
+bibtexparser==1.4.4
 certifi==2025.11.12
 charset-normalizer==3.4.4
 citeproc-py==0.9.0
@@ -13,6 +14,7 @@ idna==3.11
 Jinja2==3.1.6
 lxml==6.0.2
 MarkupSafe==3.0.3
+packaging==26.0
 pdfCropMargins==1.0.9
 pillow==12.0.0
 plasTeX==3.1
@@ -24,6 +26,7 @@ pydantic-xml==2.14.3
 pydantic_core==2.41.5
 pyee==13.0.0
 PyMuPDF==1.26.7
+pyparsing==3.3.2
 PyPDF2==2.5.0
 pypng==0.20220715.0
 python-dateutil==2.9.0.post0
