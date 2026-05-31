@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<chapter xml:id="ch-ogs" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>OGs</title>
+<chapter xml:id="ch-setting-the-stage" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>🎭 Setting the Stage</title>
 
   <xi:include href="./sec-pre-quantum.ptx" />
   <xi:include href="./sec-post-quantum.ptx" />
