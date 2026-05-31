@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-python-gold-standards" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Python Gold Standards</title>
+    <idx><h>python</h></idx>
+
+    <introduction>
+        <p>
+            <term>Note ID:</term> 202605080001 |
+            <term>Tags:</term> <tag>python</tag>
+        </p>
+    </introduction>
+
+    <subsection xml:id="subsec-python-rule-of-thumb">
+        <title>Python Rule of Thumb</title>
+        <note>
+            <p>
+                The primary goal is to routinely write scripts that read like math and code.
+            </p>
+            <p>
+                If someone scrolls your script top-to-bottom, the conceptual story should flow:
+                <ol>
+                    <li><p>What exists?</p></li>
+                    <li><p>What are you allowed to call?</p></li>
+                    <li><p>How does it work?</p></li>
+                    <li><p>Proof it works.</p></li>
+                </ol>
+            </p>
+        </note>
+    </subsection>
+
+    <subsection xml:id="sub-python-template">
+        <title>Gold Standard Python Template</title>
+        <program language="python" line-numbers="no">
+            <code>
+                <![CDATA[
+                    # src/example.py
+                    """
+                    Script descriptiion
+
+                    Author:
+                    Date:
+                    """
+                    # imports and typing
+
+                    __future__ import annotations           # Type hinting
+
+                    __all__ = ["public_function"]            # Explicitly declare public API
+
+                    # -----------------------------------------------------------------------------------------------------------
+                    # 0️⃣ Typing helpers / protocols / constants (if needed)
+                    # -----------------------------------------------------------------------------------------------------------
+
+                    # -----------------------------------------------------------------------------------------------------------
+                    # 1️⃣ Core definitions
+                    # -----------------------------------------------------------------------------------------------------------
+
+                    # -----------------------------------------------------------------------------------------------------------
+                    # 2️⃣ Public API (functions users are meant to call)
+                    # -----------------------------------------------------------------------------------------------------------
+
+                    # -----------------------------------------------------------------------------------------------------------
+                    # 3️⃣ Private helpers
+                    # -----------------------------------------------------------------------------------------------------------
+
+                    # -----------------------------------------------------------------------------------------------------------
+                    # 4️⃣ Smoke tests / example usage
+                    # -----------------------------------------------------------------------------------------------------------
+
+                    # -----------------------------------------------------------------------------------------------------------
+                    # 5️⃣ Entry point
+                    # -----------------------------------------------------------------------------------------------------------
+                    ]]>
+                    </code>
+        </program>
+    </subsection>
+
+    <subsection xml:id="subsec-key-features">
+        <title>Fundamental Features</title>
+            <note>
+                <title>Numbered Emoji Sectioning</title>
+                <p>
+                    <ul>
+                        <li><p>Helps to make long scripts scannable.</p></li>
+                        <li><p>Meant to be used as semantic anchor points, not decoration.</p></li>
+                    </ul>
+                </p>
+            </note>
+
+            <note>
+                <title><c>if name == "__main__"</c></title>
+                <p>
+                    <ul>
+                        <li><p>Placed at the bottom of the script.</p></li>
+                        <li>
+                            <p>
+                                ✔️ Only use for:
+                                <ul>
+                                    <li><p>Running smoke tests.</p></li>
+                                    <li><p>Minimal demonstrations.</p></li>
+                                    <li><p>Sanity checks.</p></li>
+                                </ul>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                ❌ Never use for:
+                                <ul>
+                                    <li><p>Running large-scale experiments.</p></li>
+                                    <li><p>Running training loops.</p></li>
+                                    <li><p>Running inference pipelines.</p></li>
+                                </ul>
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </note>
+
+            <note>
+                <title><c>def main() -> None:</c></title>
+                <p>
+                    <ul>
+                        <li><p>Always exists.</p></li>
+                        <li><p>Orchestrates calls to public API for smoke tests, demos, sanity checks.</p></li>
+                        <li><p>Never contains math or logic explicitly.</p></li>
+                    </ul>
+                </p>
+                <program language="python" line-numbers="no">
+                    <code>
+                    <![CDATA[
+                    def main() -> None:
+                        _smoke_test()
+                    ]]>
+                    </code>
+                </program>
+            </note>
+
+            <note>
+                <title>"Big functions" to bundle logic.</title>
+                <p>Use large functions to bundle related logic together.</p>
+            </note>
+
+            <note>
+                <title>Type Annotations Everywhere (within reason)</title>
+                <p>🔑 Key Habits to Remember:                                     
+                    <ul>
+                        <li><p>Use <c>Tensor</c>, not <c>torch.Tensor</c>, in type annotations.</p></li>
+                        <li><p>Annotate scalars (<c>float | Tensor</c>) when physically meaningul.</p></li>
+                        <li>
+                            <p>Use Final for constants:</p>
+                            <program language="python" line-numbers="no">
+                                <code>
+                                <![CDATA[
+                                omega: float | Final[Tensor] = 1.0
+                                ]]>
+                                </code>
+                            </program>
+                        </li>
+                    </ul>
+                </p>
+            </note>
+
+            <note>
+                <title>NumPy-Style Docstrings</title>
+                <p>
+                    These should always be present on:
+                    <ul>
+                        <li><p>public functions.</p></li>
+                        <li><p>public classes.</p></li>
+                        <li><p>nontrivial private helpers.</p></li>                                                   
+                    </ul>
+                </p>
+                <p>
+                    <ul>
+                        <li>
+                            <p>Minimal viable structure:</p>
+                                <program language="python" line-numbers="no">
+                                    <code>
+                                    <![CDATA[
+                                    def public_function(x: Tensor) -> Tensor:
+                                        """
+                                        Short description.
+
+                                        Parameters
+                                        ----------
+                                        x : Tensor
+                                            Description of x.
+
+                                        Returns
+                                        -------
+                                        Tensor
+                                            Description of return value.
+                                        """
+                                        pass
+                                    ]]>
+                                    </code>
+                             </program>
+                        </li>
+                    </ul>
+                </p>
+            </note>    
+    </subsection>
+
+</section>
