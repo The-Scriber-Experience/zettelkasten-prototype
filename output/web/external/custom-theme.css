@@ -1,24 +1,184 @@
 /* Import Custom Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Merriweather:wght@300;400;700&family=Fira+Code&display=swap');
 
+/* ============================================================ */
+/*  THERE-AND-BACK-AGAIN  —  Custom Theme (organized)          */
+/* ============================================================ */
+/* Sections (quick index)
+  1. Prism & Code Block Overrides
+  2. Theme Variables (CSS Custom Properties)
+  3. Global Layout & Body Styling
+  4. Masthead / Header
+  5. Sidebar / TOC
+  6. Main Content / Headings
+  7. Code block styling (glassmorphic, copy button)
+  8. Asides, Notes, Blocks (theorem, example, etc.)
+  9. Navbar, Footer, Search UI
+  10. Responsive Rules
+*/
+
+/* --------------------
+  Section 1: Prism & Code Block Overrides
+  (gutter alignment, line-numbers control, tab-size)
+  -------------------- */
+/* --- Prism gutter override: ensure gutter width and pre padding match --- */
+/* This block is intentionally high-specificity and uses !important so it overrides
+   PreTeXt/Prism generated CSS and prevents code text overlapping the gutter. */
+pre[class*="language-"].line-numbers .line-numbers-rows,
+code[class*="language-"].line-numbers .line-numbers-rows {
+  position: absolute !important;
+  /* position the gutter to the left of the code area (negative offset) */
+  left: -7.2em !important;
+  top: 0 !important;
+  width: 4.6em !important;
+  padding: 0 0.5em 0 0 !important;
+  text-align: right !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  color: var(--color-muted) !important;
+  border-right: 1px solid rgba(255,255,255,0.04) !important;
+  z-index: 1000 !important;
+}
+
+pre[class*="language-"].line-numbers {
+  /* match padding to the negative left offset + a little breathing room */
+  padding-left: 8.0em !important;
+  box-sizing: border-box !important;
+}
+
+pre[class*="language-"].line-numbers > code,
+pre[class*="language-"].line-numbers > code[class*="language-"] {
+  margin-left: 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+  box-sizing: border-box !important;
+}
+
+/* Adjust the actual code content: add a small left padding so the code
+   text sits comfortably to the right of the gutter. Also normalize tab size. */
+pre[class*="language-"].line-numbers > code,
+.ptx-content pre.program.clipboardable.line-numbers > code {
+  padding-left: 0 !important;
+  display: block !important;
+  white-space: pre !important;
+  -moz-tab-size: 4 !important;
+  tab-size: 4 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.ptx-content pre.program.clipboardable.line-numbers {
+  padding-left: 4.6em !important;
+}
+
+@media (max-width: 600px) {
+  pre[class*="language-"].line-numbers,
+  .ptx-content pre.program.clipboardable.line-numbers {
+    padding-left: 5.2em !important;
+  }
+  pre[class*="language-"].line-numbers .line-numbers-rows {
+    width: 4.2em !important;
+    left: 0.5em !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Temporary: disable Prism line numbers entirely so code blocks render as plain glassmorphic code panels while we iterate on layout. */
+pre[class*="language-"].line-numbers,
+code[class*="language-"].line-numbers,
+.ptx-content pre.program.clipboardable.line-numbers {
+  padding-left: 0 !important;
+}
+
+pre[class*="language-"].line-numbers .line-numbers-rows,
+code[class*="language-"].line-numbers .line-numbers-rows {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Ensure inner code takes full width and keeps the glass effect */
+pre[class*="language-"].line-numbers > code,
+.ptx-content pre.program > code {
+  padding-left: 1.0em !important;
+}
+
+/* Remove any right border leftover from gutter rules */
+pre[class*="language-"].line-numbers { border-right: none !important; }
+
+
 :root,
 :root.dark-mode,
 html,
 html.dark-mode {
+  /* ============================================================ */
+  /*  Section 2: Theme Variables / Color + Typography Definitions    */
+  /* ============================================================ */
   /* Override PreTeXt theme colors - cyan/purple instead of blue/red */
-  --primary-color: #14b5ff !important;
-  --secondary-color: #7952f5 !important;
-  --primary-color-dark: #0a95eb !important;
+
   --primary-color-light: #00e8ff !important;
-  --secondary-color-dark: #5e17eb !important;
+  --primary-color: #14b5ff !important;
+  --primary-color-dark: #0070EB !important;
+
   --secondary-color-light: #9b7dff !important;
-  --primary-color-gray-5: rgba(20, 181, 255, 0.15) !important;
+  --secondary-color: #7952F5 !important;
+  --secondary-color-dark: #4c48f2 !important;
+
+  --tertiary-color-light: rgba(112, 224, 0, 1.0 ) !important;
+  --tertiary-color-medium: #38b000 !important;
+  --tertiary-color-dark: #006400 !important;
+
+  --quaternary-color-light: rgba(254, 182, 57, 1.0) !important; 
+  --quaternary-color: rgba(255, 120, 61, 1.0) !important;
+  --quaternary-color-dark: rgba(240, 84, 0, 1.0) !important;
+
+  --pernary-color-light: rgba(255, 118, 161, 1.0) !important;
+  --pernary-color: rgba(255, 64, 161, 1.0) !important;
+  --pernary-color-dark: #f76166 !important;
   
+  /* Grey Colors */
+  --primary-color-gray-1: rgba(20, 181, 255, 0.05) !important;
+  --primary-color-gray-2: rgba(20, 181, 255, 0.10) !important;
+  --primary-color-gray-3: rgba(20, 181, 255, 0.15) !important;
+  --primary-color-gray-4: rgba(20, 181, 255, 0.2) !important;
+  --primary-color-gray-5: rgba(20, 181, 255, 0.4) !important;
+  --primary-color-gray-6: rgba(20, 181, 255, 0.6) !important;
+  
+  --secondary-color-gray-1: rgba(121, 82, 245, 0.05) !important;
+  --secondary-color-gray-2: rgba(121, 82, 245, 0.10) !important;
+  --secondary-color-gray-3: rgba(121, 82, 245, 0.15) !important;
+  --secondary-color-gray-4: rgba(121, 82, 245, 0.2) !important;
+  --secondary-color-gray-5: rgba(121, 82, 245, 0.4) !important;
+  --secondary-color-gray-6: rgba(121, 82, 245, 0.6) !important;
+
+  --tertiary-color-gray-1: rgba(50, 224, 0, 0.05) !important;
+  --tertiary-color-gray-2: rgba(50, 224, 0, 0.10) !important;
+  --tertiary-color-gray-3: rgba(50, 224, 0, 0.15) !important;
+  --tertiary-color-gray-4: rgba(50, 224, 0, 0.2) !important;
+  --tertiary-color-gray-5: rgba(50, 224, 0, 0.4) !important;
+  --tertiary-color-gray-6: rgba(50, 224, 0, 0.6) !important; 
+
+  --quaternary-color-gray-1: rgba(255, 120, 61, 0.05) !important;
+  --quaternary-color-gray-2: rgba(255, 120, 87, 0.10) !important;
+  --quaternary-color-gray-3: rgba(255, 120, 61, 0.15) !important;
+  --quaternary-color-gray-4: rgba(255, 120, 61, 0.2) !important;
+  --quaternary-color-gray-5: rgba(255, 120, 61, 0.4) !important;
+  --quaternary-color-gray-6: rgba(255, 120, 61, 0.6) !important;
+
+  --pernary-color-gray-1: rgba(255, 118, 161, 0.05) !important;
+  --pernary-color-gray-2: rgba(255, 118, 161, 0.10) !important;
+  --pernary-color-gray-3: rgba(255, 118, 161, 0.15) !important;
+  --pernary-color-gray-4: rgba(255, 118, 161, 0.2) !important;
+  --pernary-color-gray-5: rgba(255, 118, 161, 0.4) !important;
+  --pernary-color-gray-6: rgba(255, 118, 161, 0.6) !important;
+
+
   /* TOC active item overrides - these are the actual variables PreTeXt uses */
-  --tocitem-active-background: rgba(20, 181, 255, 0.2) !important;
-  --tocitem-active-text-color: #00e8ff !important;
-  --tocitem-active-border-color: rgba(20, 181, 255, 0.4) !important;
-  --tocitem-active-backgrounde: rgba(20, 181, 255, 0.15) !important;
+  --tocitem-active-background: var(--primary-color-gray-4) !important;
+  --tocitem-active-text-color: var(--primary-color)  !important;
+  --tocitem-active-border-color: var(--primary-color-gray-5) !important;
+  --tocitem-active-backgrounde: var(--primary-color-gray-3) !important;
   
   /* TOC specific overrides */
   --toc-item-active-background: linear-gradient(135deg, rgba(20, 181, 255, 0.2), rgba(121, 82, 245, 0.15)) !important;
@@ -28,14 +188,14 @@ html.dark-mode {
   /* Colors - Matching original design */
   --color-bg: #0d1117;
   --color-surface: #161b22;
-  --color-primary: #14b5ff;
-  --color-secondary: #7952f5;
-  --color-text: whitesmoke;
+  --color-primary: var(--primary-color);
+  --color-secondary: var(--secondary-color);
+  --color-text: #C5F8FF;
   --color-muted: #8b949e;
   --color-link: #7652f5;
   --color-link-hover: #5e17eb;
-  --color-math: #00f5db;
-  --color-warning: #ffa657;
+  --color-math: var(--primary-color-light);
+  --color-warning: #ffcc00;
 
   /* Gradients */
   --gradient-light-to-dark-blue: linear-gradient(to right bottom, #00e8ff, #14b5ff, #3a98ff, #0070eb);
@@ -50,6 +210,9 @@ html.dark-mode {
 
 /* Global Background & Body Styling */
 body.pretext {
+  /* ============================================================ */
+  /*  Section 3: Global Layout & Body Styling                     */
+  /* ============================================================ */
   background-image: url('wisp.jpg');
   background-size: cover;
   background-position: center;
@@ -61,6 +224,63 @@ body.pretext {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* Add Cover Image */
+#cover-image {
+  text-align: center;
+}
+
+#cover-image {
+  margin-bottom: 2rem;
+  background: transparent !important;
+  border: none !important;
+  border-left: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+#cover-image.figure {
+  background: transparent !important;
+  border: none !important;
+  border-left: none !important;
+  box-shadow: none !important;
+}
+
+#cover-image .image-box {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+}
+
+#cover-image img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+#cover-image figcaption {
+  display: none;
+}
+
+.frontmatter .introduction > .heading {
+  display: none;
+}
+
+/* Override introduction styling for cover image in frontmatter */
+.frontmatter section.introduction {
+  background: transparent !important;
+  border-left: none !important;
+  padding: 0 !important;
+  margin-bottom: 2rem !important;
+  border-radius: 0 !important;
+}
+
+.toc-item.toc-introduction {
+  display: none !important;
 }
 
 /* Ensure page wrapper takes full height */
@@ -93,12 +313,14 @@ body.pretext {
   background: linear-gradient(180deg, #00ffff, #00e8ff);
 }
 
-/* Header & Masthead */
+/* ============================================================ */
+/*  Section 4: Header & Masthead                                */
+/* ============================================================ */
 .ptx-masthead {
   background: rgba(0, 0, 0, 0.6) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .ptx-masthead .title-container {
@@ -108,7 +330,7 @@ body.pretext {
 
 .ptx-masthead .title-container h1 {
   font-family: var(--font-heading) !important;
-  font-size: 1.8rem !important;
+  font-size: 1.5rem !important;
   background: var(--gradient-cyan-to-blue);
   -webkit-background-clip: text;
   background-clip: text;
@@ -120,6 +342,21 @@ body.pretext {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Ensure inline `code` in masthead titles renders with its own styling
+   (parent title uses -webkit-text-fill-color: transparent for gradient text) */
+.ptx-masthead .title-container h1 code,
+.ptx-masthead .title-container h1 code.code-inline {
+  font-family: var(--font-mono) !important;
+  background: #252a33 !important;
+  color: #00E8FF !important;
+  padding: 3px 8px !important;
+  font-size: 0.88em !important;
+  border-radius: 4px !important;
+  border: none !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: padding-box !important;
 }
 
 .ptx-masthead .byline {
@@ -146,7 +383,9 @@ body.pretext {
   filter: drop-shadow(0 0 8px rgba(0, 232, 255, 0.4));
 }
 
-/* Sidebar & TOC */
+/* ============================================================ */
+/*  Section 5: Sidebar & Table-of-Contents (TOC)                */
+/* ============================================================ */
 .ptx-page {
   display: grid !important;
   grid-template-columns: 350px 1fr !important;
@@ -160,8 +399,8 @@ body.pretext {
   max-width: 350px !important;
   background: rgba(13, 17, 23, 0.4) !important;
   border-right: 1px solid rgba(20, 181, 255, 0.2);
-  backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
   box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3), inset -1px 0 0 rgba(255, 255, 255, 0.1);
   overflow-y: auto !important;
   height: 100vh !important;
@@ -392,7 +631,7 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
   background: rgba(40, 30, 70, 0.6) !important;
   background-color: rgba(40, 30, 70, 0.6) !important;
   border: 1px solid rgba(120, 90, 180, 0.5) !important;
-  border-radius: 12px !important;
+  border-radius: 12px !important; 
 }
 
 /* Remove square containers from nested active lists */
@@ -441,7 +680,7 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
   font-weight: bold !important;
 }
 
-/* Folder expand/collapse arrow when expanded - matching gradient */
+/* Folder expand/collapse arrow when expanded - matchi  ng gradient */
 .ptx-toc .toc-item.contains-active > .toc-title-box .toc-chevron,
 .ptx-toc .toc-item.contains-active > .toc-title-box .expand-collapse,
 .ptx-toc .toc-item.contains-active > .toc-title-box button,
@@ -464,8 +703,8 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
 /* Main Content Area */
 .ptx-page > .ptx-main {
   background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   padding: 2rem;
   min-height: 100vh;
 }
@@ -476,7 +715,9 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
   padding: 0 2rem;
 }
 
-/* Headings */
+/* ============================================================ */
+/*  Section 6: Main Content & Headings                          */
+/* ============================================================ */
 .ptx-content h1, .ptx-content h2, .ptx-content h3, .ptx-content h4, .ptx-content h5, .ptx-content h6 {
   font-family: var(--font-heading) !important;
 }
@@ -491,10 +732,10 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
   margin-bottom: 1.5rem;
 }
 
-/* Section numbers and h2 headings - purple gradient matching sidebar */
+/* Subsection heading - aqua to sky-blue gradient */
 .ptx-content h2.heading {
   font-size: 1.65rem !important;
-  background: linear-gradient(130deg, #3b82f6, #8b5cf6, #d946ef) !important;
+  background: linear-gradient(120deg, #22d3ee, #4361EE, #8b5cf6) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -511,10 +752,10 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
   -webkit-text-fill-color: transparent !important;
 }
 
-/* Subsection heading - cyan to purple gradient */
+/* Subsection heading - aqua to sky-blue gradient */
 .ptx-content h4.heading {
   font-size: 1.25rem !important;
-  background: linear-gradient(120deg, #06b6d4, #8b5cf6, #d946ef) !important;
+  background: linear-gradient(120deg, #22d3ee, #38bdf8, #60a5fa) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -533,10 +774,35 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
   margin-bottom: 0.6rem;
 }
 
+/* Ensure inline code inside content headings uses inline-code styling
+   (override heading gradient -webkit-text-fill-color) */
+.ptx-content h1.heading code,
+.ptx-content h2.heading code,
+.ptx-content h3.heading code,
+.ptx-content h4.heading code,
+.ptx-content h5.heading code,
+.ptx-content h6.heading code,
+.ptx-content h1.heading code.code-inline,
+.ptx-content h2.heading code.code-inline,
+.ptx-content h3.heading code.code-inline,
+.ptx-content h4.heading code.code-inline,
+.ptx-content h5.heading code.code-inline,
+.ptx-content h6.heading code.code-inline {
+  font-family: var(--font-mono) !important;
+  background: #252a33 !important;
+  color: #00e8ff !important;
+  padding: 3px 8px !important;
+  font-size: 0.88em !important;
+  border-radius: 4px !important;
+  border: none !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: padding-box !important;
+}
+
 /* Front Matter page title - matches website header gradient with more bright blue */
 .ptx-content section.frontmatter h2.heading,
 .ptx-content section.frontmatter h1.heading {
-  background: linear-gradient(110deg, #00ffee, #00d4ff, #1e90ff) !important;
+  background: linear-gradient(110deg, #00e8ff, #14b5ff, #3a98ff) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -545,7 +811,7 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
 
 .ptx-content section.introduction {
   background: rgba(255, 255, 255, 0.10);
-  border-left: 3px solid var(--color-primary);
+  border-left: 3px solid var(--primary-color);
   padding: 1.5rem;
   margin-bottom: 2rem;
   border-radius: 4px;
@@ -565,22 +831,22 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
   letter-spacing: 0.2px;
 }
 
-/* Links - Cyan/Blue theme instead of purple */
+/* Links */
 .ptx-content a {
-  color: #14b5ff !important;
+  color: var(--primary-color) !important;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .ptx-content a:hover {
-  color: #00e8ff !important;
+  color: var(--primary-color-light) !important;
   text-decoration: underline;
 }
 
 /* Math Content */
 .ptx-content .displaymath {
-  background: rgba(0, 245, 219, 0.05) !important;
-  border: 1px solid rgba(0, 245, 219, 0.2);
+  background: rgba(0, 155, 245, 0.05) !important;
+  border: 1px solid rgba(0, 176, 245, 0.2);
   border-radius: 8px;
   padding: 1.5rem !important;
   margin: 1.5rem 0 !important;
@@ -592,37 +858,216 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
 }
 
 /* Definition, Theorem, Example blocks */
-.ptx-content .definition-like,
-.ptx-content .theorem-like,
-.ptx-content .example-like,
-.ptx-content .remark-like {
-  background: rgba(255, 255, 255, 0.05);
-  border-left: 3px solid var(--color-primary);
+
+/* 🟣 Definitions */
+.ptx-content .definition-like {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-left: 3px solid var(--secondary-color);
   border-radius: 8px;
   padding: 1.5rem;
   margin: 1.5rem 0;
 }
 
-.ptx-content .definition-like .heading,
-.ptx-content .theorem-like .heading,
-.ptx-content .example-like .heading {
+.ptx-content .definition-like .heading {
   font-family: var(--font-heading) !important;
-  color: var(--color-primary) !important;
-  font-size: 1.1rem !important;
-  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.0rem !important;
 }
 
-/* Alert boxes */
-.ptx-content .assemblage-like {
-  background: rgba(255, 166, 87, 0.1);
-  border: 1px solid var(--color-warning);
+/* 📗 Theorem blocks */
+
+.ptx-content .theorem-like {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-left: 3px solid var(--tertiary-color-medium);
   border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+
+.ptx-content .theorem-like .heading {
+  font-family: var(--font-heading) !important;
+  font-weight: bold;
+  font-size: 1.1rem !important;
+  background: linear-gradient(120deg, #38b000, #5ce663, #a7f3d0) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent;
+  background-clip: text;
+}
+
+/* 🔵 Example blocks */
+
+.ptx-content .example-like {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-left: 3px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.ptx-content .example-like .heading {
+  font-family: var(--font-heading);
+  font-weight: bold;
+  background: linear-gradient(120deg, #00e8ff, #14a5ff);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent;
+  text-align: center
+}
+
+/* 🎗️ Remark blocks */
+
+.ptx-content .remark-like {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-left: 3px solid var(--secondary-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+/*
+.ptx-content .remark-like .heading {
+  font-family: var(--font-heading);
+  font-size: 1.1rem !important;
+  font-weight: bold;
+  background: linear-gradient(120deg,#8b5cf6, #d946ef, #ff6f91, #ff9671) !important;
+  -webkit-background-clip: text;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent;
+  text-align: center;
+} 
+*/
+
+/* ⚽ Exercise blocks */
+
+.ptx-content .exercise-like  {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-left: 3px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.ptx-content .exercise-like .heading {
+  font-family: var(--font-heading);
+  font-weight: bold;
+  background: linear-gradient(120deg, #00e8ff, #14a5ff);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent;
+  text-align: center;
+} 
+
+/* ============================================
+   ASIDE ELEMENT FIXES
+   ============================================ */
+
+/* 1. Reset the Aside Container to be full-width and centered */
+.ptx-content .aside,
+.aside {
+  /* Reset all positioning */
+  position: static !important;
+  float: none !important;
+  clear: both !important;
+  
+  /* Force full width of the CONTENT COLUMN (not necessarily viewport) */
+  width: 100% !important;
+  max-width: 100% !important;
+  
+  /* CRITICAL: Remove any left/right margins that push it right */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  
+  /* Reset padding to ensure it touches the edges of the text column */
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;;
+
+  /* Text alignment inside box */
+  text-align: left !important;
+
+  /* Optional: Make it look like a distinct "callout" box */
+  background: rgba(20, 181, 255, 0.05) !important;
+  border-left: 4px solid var(--quaternary-color) !important; 
+  border-radius: 8px !important; 
+}
+
+/* 2. If the aside is inside a wrapper that has padding, we need to negate it */
+/* This targets the specific PreTeXt structure often used for asides */
+.ptx-content .aside > .content,
+.aside > .content {
+  padding-left: 1.5rem !important; /* Add padding back ONLY to the text, not the box */
+  padding-right: 1.5rem !important;
+}
+
+/* 3. Fix the "Aside" Header Size and Style */
+.ptx-content .aside .heading,
+.aside .heading {
+  font-size: 1.1rem !important; /* Shrinks the "Aside" label */
+  font-family: var(--font-heading) !important;
+  font-weight: bold !important;
+  text-transform: none !important; /* Prevents "ASIDE" from being all caps */
+  letter-spacing: 0.5px !important;
+  
+  /* Match your gradient theme */
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  
+  margin-bottom: 0.5rem !important;
+}
+
+/* 4. Ensure the text inside flows naturally */
+.ptx-content .aside p,
+.aside p {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  color: var(--color-text) !important;
+  background: linear-gradient(130deg, #3b82f6, #8b5cf6, #d946ef)  !important;
+  border: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  margin: 0.5rem 0 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.ptx-content .aside *,
+.aside * {
+  border: none !important;
+}
+
+
+/*=================
+  Alert boxes 
+  ===================*/
+.ptx-content .assemblage-like {
+  background: rgba(40, 30, 70, 0.6) !important;
+  background-color: rgba(40, 30, 70, 0.6) !important;
+  border: 1px solid rgba(120, 90, 180, 0.5) !important;
+  border-radius: 12px !important; 
+  border: 1px solid var(--primary-color);
   padding: 1rem;
   margin-bottom: 2rem;
-  color: var(--color-warning);
+  color: var(--gradient-light-to-dark-blue) !important;
+
 }
 
-/* Code blocks - IBM Quantum Circuit Composer inspired */
+/*====================================================
+  Code blocks - IBM Quantum Circuit Cnoteomposer inspired 
+  ====================================================*/
 .ptx-content code.code-inline,
 .ptx-content pre {
   font-family: var(--font-mono) !important;
@@ -637,7 +1082,37 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
   padding: 3px 8px;
   font-size: 0.88em;
   background: #252a33 !important;
-  color: #5ccfe6 !important;
+  color: #00E8FF !important;
+  border-radius: 4px;
+  border: none;
+}
+
+.ptx-content pre {
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0;
+  overflow-x: auto;
+  line-height: 1.6;
+  font-size: 0.92rem;
+}
+
+/*====================================================
+  Code blocks - IBM Quantum Circuit Cnoteomposer inspired 
+  ====================================================*/
+.ptx-content code.code-inline,
+.ptx-content pre {
+  font-family: var(--font-mono) !important;
+  background: #1a1d24 !important;
+  color: #e0e0e0 !important;
+  border: 1px solid rgba(60, 70, 85, 0.5);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ptx-content code.code-inline {
+  padding: 3px 8px;
+  font-size: 0.88em;
+  background: #252a33 !important;
+  color: #00E8FF !important;
   border-radius: 4px;
   border: none;
 }
@@ -652,35 +1127,39 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
 
 /* IBM Quantum-inspired syntax highlighting - colorful, clean, high contrast */
 .ptx-content pre .keyword,
-.ptx-content pre .kw { color: #5ccfe6 !important; } /* Cyan - keywords (include, if, qreg) */
+.ptx-content pre .kw { color: #19f9d8 !important; } /* Cyan - keywords (include, if, qreg) */
 .ptx-content pre .string,
-.ptx-content pre .st { color: #c792ea !important; } /* Magenta/Purple - strings */
+.ptx-content pre .st { color: #ff75c3 !important; } /* Magenta/Purple - strings */
 .ptx-content pre .comment,
-.ptx-content pre .co { color: #546e7a !important; font-style: italic; } /* Muted gray - comments */
+.ptx-content pre .co { color: #4c739c !important; font-style: italic; }
 .ptx-content pre .function,
-.ptx-content pre .fu { color: #82aaff !important; } /* Blue - functions */
+.ptx-content pre .fu { color: #14b5ff !important; } /* Blue - functions */
 .ptx-content pre .number,
-.ptx-content pre .dv { color: #f9ae58 !important; } /* Gold/Yellow - numbers */
+.ptx-content pre .dv { color: #be58f9 !important; } /* Gold/Yellow - numbers */
 .ptx-content pre .operator,
-.ptx-content pre .op { color: #89ddff !important; } /* Light cyan - operators */
+.ptx-content pre .op { color: #939af8 !important; font-weight: 600 !important; } /* Light cyan - operators */
 .ptx-content pre .variable,
-.ptx-content pre .va { color: #e0e0e0 !important; } /* Light gray - variables */
+.ptx-content pre .va { color: #00e000 !important; } /* Light gray - variables */
 .ptx-content pre .type,
-.ptx-content pre .dt { color: #ffcb6b !important; } /* Yellow - types */
+.ptx-content pre .dt { color: #feb538 !important; } /* Yellow - types */
 .ptx-content pre .constant,
-.ptx-content pre .cn { color: #f78c6c !important; } /* Orange - constants */
+.ptx-content pre .cn { color: #fe38e4 !important; } /* Orange - constants */
 .ptx-content pre .builtin,
-.ptx-content pre .bu { color: #5ccfe6 !important; } /* Cyan - builtins */
+.ptx-content pre .bu { color: #00e8ff !important; } /* Cyan - builtins */
 .ptx-content pre .attribute,
-.ptx-content pre .at { color: #c792ea !important; } /* Purple - attributes */
+.ptx-content pre .at { color: #6f78fa !important; } /* Purple - attributes */
 .ptx-content pre .preprocessor,
-.ptx-content pre .pp { color: #c3e88d !important; } /* Green - preprocessor */
+.ptx-content pre .pp { color: #38fe52 !important; } /* Green - preprocessor */
 
 /* Code block copy button styling */
 .ptx-content pre.clipboardable {
   position: relative !important;
   padding-right: 50px !important;
 }
+
+/* --------------------
+   Section 7: Code block styling (glassmorphic, copy button)
+   -------------------- */
 
 .code-copy {
   position: absolute !important;
@@ -710,7 +1189,115 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
 }
 
 .code-copy:hover .copyicon {
-  color: #fff !important;
+  color: var(--color-text) !important;
+}
+
+/* ==================================================
+   Glassmorphic Code Block Styling
+   Match the site theme with a semi-transparent, blurred
+   panel while keeping high-contrast syntax highlighting.
+   ================================================== */
+.ptx-content .code-box,
+.ptx-content pre.program,
+.ptx-content pre.program.clipboardable,
+.ptx-content pre.program.line-numbers,
+.ptx-content pre.clipboardable.line-numbers {
+  background: linear-gradient(135deg, rgba(20,181,255,0.04), rgba(121,82,245,0.03)) !important;
+  background-color: rgba(8,10,14,0.6) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  border-radius: 12px !important;
+  padding: 0 !important;
+  margin: 1rem 0 !important;
+  -webkit-backdrop-filter: blur(10px) saturate(120%) !important;
+  backdrop-filter: blur(10px) saturate(120%) !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.02) !important;
+  overflow: auto !important;
+  box-sizing: border-box !important;
+}
+
+.ptx-content .code-box pre,
+.ptx-content pre.program > code {
+  padding: 1.05rem 1.25rem !important;
+  margin: 0 !important;
+  display: block !important;
+  color: #e6f9ff !important;
+  background: transparent !important; /* inherit glass panel */
+  white-space: pre !important;
+  overflow-x: auto !important;
+  max-width: 100% !important;
+}
+
+/* Make line-numbers gutter match glass theme */
+pre[class*="language-"].line-numbers .line-numbers-rows,
+code[class*="language-"].line-numbers .line-numbers-rows {
+  left: 0 !important;
+  width: 3.6em !important;
+  border-right: 1px solid rgba(255,255,255,0.04) !important;
+  color: rgba(220,240,255,0.55) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0)) !important;
+  z-index: 3 !important;
+  text-align: right !important;
+  padding-right: 0.6em !important;
+}
+
+/* Ensure the line-number gutter doesn't get pushed by code padding */
+/* Use absolute-positioned gutter + code margin to avoid double-padding
+   and ensure code text never overlaps the numbers. */
+pre[class*="language-"].line-numbers,
+code[class*="language-"].line-numbers {
+  padding-left: 0 !important;
+}
+
+pre.line-numbers > code,
+pre[class*="language-"].line-numbers > code,
+code[class*="language-"].line-numbers > code {
+  margin-left: 3.6em !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure pre itself positions the gutter and the code content respects it */
+pre.line-numbers,
+pre[class*="language-"].line-numbers {
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+pre.line-numbers > code,
+pre[class*="language-"].line-numbers > code {
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+  margin: 0 !important;
+  left: 0 !important;
+}
+
+/* Prevent code text from overlapping the gutter by ensuring the code block's content is offset
+   and that the gutter sits above via z-index. */
+.ptx-content pre.program .line-numbers-rows,
+.ptx-content pre .line-numbers-rows {
+  z-index: 4 !important;
+}
+
+/* Prevent long unbroken words from expanding the layout; allow horizontal scroll instead */
+.ptx-content .code-box,
+.ptx-content pre {
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+/* Ensure highlighted lines are subtle and readable */
+pre[class*="language-"] .line-highlight,
+code[class*="language-"] .line-highlight {
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(20,181,255,0.02)) !important;
+  box-shadow: inset 0 0 0 1px rgba(20,181,255,0.02) !important;
+}
+
+/* Soften copy button so it sits on the glass panel without heavy blur */
+.code-copy {
+  background: linear-gradient(145deg, rgba(20,181,255,0.08), rgba(121,82,245,0.06)) !important;
+  border: 1px solid rgba(20,181,255,0.12) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
 }
 
 /* Lists */
@@ -732,7 +1319,6 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
   background: linear-gradient(145deg, rgba(0, 232, 255, 0.2), rgba(0, 112, 235, 0.2));
   border: 1px solid rgba(20, 181, 255, 0.5);
   border-radius: 50px;
-  color: #5ddbff;
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   font-weight: 500;
@@ -740,12 +1326,55 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
   margin-right: 0.5rem;
 }
 
-/* Navigation buttons (Prev, Up, Next) */
+/* ============================================
+   Tags / Pills
+   ============================================ */
+.tag,
+.ptx-tag,
+.badge {
+    display: inline-block;
+    font-family: var(--ptg-font-heading);
+    font-size: 0.65rem;
+    padding: 4px 12px;
+    background: linear-gradient(145deg, rgba(20, 181, 255, 0.2), rgba(0, 112, 235, 0.15));
+    border: 1px solid rgba(20, 181, 255, 0.4);
+    border-radius: var(--ptg-radius-pill);
+    color: #5ddbff;
+    transition: all var(--ptg-transition-normal);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tag:hover,
+.ptx-tag:hover,
+.badge:hover {
+    background: linear-gradient(145deg, rgba(20, 181, 255, 0.3), rgba(0, 112, 235, 0.25));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(20, 181, 255, 0.3);
+}
+
+.tag-purple,
+.id-badge {
+    background: linear-gradient(145deg, rgba(168, 85, 247, 0.25), rgba(118, 82, 245, 0.2));
+    border: 1px solid rgba(168, 85, 247, 0.5);
+    color: #d8b4fe;
+    border-radius: var(--ptg-radius-sm);
+    font-family: var(--ptg-font-mono);
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+}
+
+.id-badge:hover {
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+}
+
+/* ============================================================ */
+/*  Section 9: Navbar, Footer, and Navigation Controls          */
+/* ============================================================ */
 .ptx-navbar {
   background: rgba(0, 0, 0, 0.6) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   padding: 0.75rem 1.5rem !important;
 }
 
@@ -756,14 +1385,13 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
   gap: 6px !important;
   background: linear-gradient(135deg, rgba(0, 210, 255, 0.3), rgba(30, 130, 230, 0.35)) !important;
   border: 1px solid rgba(0, 200, 255, 0.45) !important;
-  color: #00e5ff !important;
   padding: 8px 14px !important;
   border-radius: 8px !important;
   font-family: var(--font-heading) !important;
   font-size: 13px !important;
   cursor: pointer !important;
-  backdrop-filter: blur(8px) !important;
   -webkit-backdrop-filter: blur(8px) !important;
+  backdrop-filter: blur(8px) !important;
   transition: all 0.2s ease !important;
   text-transform: none !important;
 }
@@ -772,7 +1400,7 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
   background: linear-gradient(135deg, rgba(0, 230, 255, 0.45), rgba(50, 150, 250, 0.5)) !important;
   border-color: rgba(0, 220, 255, 0.65) !important;
   transform: scale(1.03) !important;
-  color: #ffffff !important;
+  color: whitesmoke !important;
   box-shadow: 0 4px 16px rgba(0, 200, 255, 0.35) !important;
 }
 
@@ -818,8 +1446,8 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
 #ptx-page-footer {
   background: rgba(0, 0, 0, 0.7) !important;
   border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   padding: 2rem 1rem !important;
   text-align: center !important;
   position: relative;
@@ -862,7 +1490,7 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
   border-radius: 8px;
   padding: 1rem;
   margin-bottom: 1rem;
-  border-left: 3px solid var(--color-primary);
+  border-left: 3px solid var(--primary-color);
 }
 
 .ptx-content .biblio .bibitem {
@@ -871,7 +1499,7 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
 
 /* Cross-references and linked notes */
 .ptx-content .xref {
-  color: #7952f5 !important;
+  color: var(--secondary-color-light) !important;
   font-family: var(--font-heading);
   font-size: 0.9em;
   padding: 2px 8px;
@@ -881,17 +1509,29 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
 }
 
 .ptx-content .xref:hover {
-  background: rgba(121, 82, 245, 0.22);
+  background: rgba(153, 128, 238, 0.22);
   color: #9b7dff !important;
 }
 
 /* Reference labels (Definition, Theorem, etc.) */
-.ptx-content .definition-like .heading .type,
-.ptx-content .theorem-like .heading .type,
-.ptx-content .example-like .heading .type,
-.ptx-content .remark-like .heading .type {
-  color: #7952f5 !important;
+.ptx-content .definition-like .heading .type {
+  color: var(--quaternary-color-light) !important;
 }
+
+.ptx-content .theorem-like .heading .type {
+  color: var(--tertiary-color-light) !important;
+}
+
+.ptx-content .example-like .heading .type,
+.ptx-content .exercise-like .heading .type {
+  color: var(--primary-color) !important;
+}
+
+.ptx-content .remark-like .heading .type {
+  color: var(--quaternary-color-light) !important;
+}
+
+
 
 /* Term highlighting */
 .ptx-content .terminology {
@@ -916,11 +1556,11 @@ button.light-dark-button {
   }
   
   .ptx-content h1.heading {
-    font-size: 2rem !important;
+    font-size: 1.5rem !important;
   }
   
   .ptx-content h2.heading {
-    font-size: 1.4rem !important;
+    font-size: 1.25rem !important;
   }
 }
 
@@ -933,11 +1573,18 @@ button.light-dark-button {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url('space-bg.png') center center / cover no-repeat, #0a0a0f;
   z-index: 9999;
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease;
+
+  -webkit-font-smoothing: antialiased;
+  color:#fff;
+  background-image: url('space-bg.png');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  overflow: hidden;
+  
 }
 
 #graph-overlay.visible {
@@ -1061,7 +1708,7 @@ dialog#ptx-search-modal::backdrop {
   border: 1px solid rgba(20, 181, 255, 0.2) !important;
   border-radius: 12px !important;
   padding: 16px !important;
-  max-height: 55vh !important;
+  max-height: 75vh !important;
   overflow-y: auto !important;
 }
 
@@ -1366,8 +2013,8 @@ body .ptx-navbar .searchbox #searchresultsplaceholder.search-active,
     border-bottom: 1px solid rgba(255,255,255,0.1) !important;
 
     box-shadow: none !important;
-    backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
+    backdrop-filter: blur(12px) !important;
   }
 
   /* Make TOC scroll-safe */
@@ -1385,7 +2032,7 @@ body .ptx-navbar .searchbox #searchresultsplaceholder.search-active,
   .ptx-page > .ptx-main {
     padding: 1rem !important;
     margin: 0 !important;
-    min-height: auto !important;
+    min-height: 0 !important;
   }
 
   /* Add breathing room below navbar */
@@ -1396,7 +2043,7 @@ body .ptx-navbar .searchbox #searchresultsplaceholder.search-active,
 
   /* ---- Typography scaling ---- */
   .ptx-content h1.heading {
-    font-size: 1.9rem !important;
+    font-size: 1.5rem !important;
   }
 
   .ptx-content h2.heading {
@@ -1416,8 +2063,8 @@ body .ptx-navbar .searchbox #searchresultsplaceholder.search-active,
   .ptx-navbar,
   .ptx-masthead,
   .ptx-page-footer {
-    backdrop-filter: blur(6px) !important;
     -webkit-backdrop-filter: blur(6px) !important;
+    backdrop-filter: blur(6px) !important;
   }
 
   /* ---- Code blocks: prevent sideways hell ---- */

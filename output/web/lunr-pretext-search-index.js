@@ -1,441 +1,405 @@
 var ptx_lunr_search_style = "textbook";
 var ptx_lunr_docs = [
 {
-  "id": "sec-topology-intro",
+  "id": "eigenscribe-framework",
   "level": "1",
-  "url": "sec-topology-intro.html",
+  "url": "eigenscribe-framework.html",
+  "type": "Section",
+  "number": "1",
+  "title": "The Eigenscribe Framework",
+  "body": " The Eigenscribe Framework  first-principles reasoning   The Eigenscribe framework is a structured appraoch to reasoning that aims to empower independent learning and research by emphasizing transparency and reporducibility. This is particularly important at the dawn of the AI era where the ability to sanity check is vital not onlyy the individual but for the fidelity of the scientific ecosystem as a whole.  At its core, the framework strives to enable responsible AI-assisted developing in a way that maximizes the benefits reaped from AI without sacrificing quality nor a human-supervised understanding of conclusions and systems derived. Rather than requiring that all ideas originate from fully reduced assumptions, the system allows exploratory and heuristic reasoning, which is progressively refined into formal, reproducible forms.     First-Principles Framework  first-principles   The Eigenscribe framework requires that assumptions are stated explicitly, inference steps remain traceable, and conclusions are reproducible and open to revision. Conceptual bridges across domains are established through shared rudimentary fundamentals (e.g., mathematical principles and physical laws). Analogy alone is not sufficient as a basis for establishing neither concepts nor conclusions.  This commitment to first-principles reasoning is designed to promote clarity, rigor, and intellectual honesty so that sanity checks can be performed independently by the reader, a vital step in the learning process that the lifeblood of science and engineering depend on. It is also intended to be compatible with my own personal exploratory and reasoning heuristic reasoning as I add content to 'There and Back Again' and other related projects.    Core Guidelines    Strive to always explicitly justify foundational assumptions based on grounded empirical observation, physical law, or formally defined axioms. Anything that is not explictly decomposed into foundational components must include a note alerting the reader along with a reputatble source and further readings that do go into foundatoinal derivations. This allows flexibility for me (the author) as I learn material myself and as I add content to There and Back Again, especialy in the beginning phase of compiling this work.  Each inferrentiable step is traceable such that intermmediate reasoning can be sanity checked, reproduced, and communicated to other learners.  Constructed bridges between domains are constructed from shared primitives. Analogy alone is never sufficient.  Derived results and conclusions remain falisifiable and can be independently verified by the reader. This enables irrative correction and refinement of both assumptions and conclusions.       The Eigenscribe Framework will be routinely iterated over time.   "
+},
+{
+  "id": "sub-methodology-3-2",
+  "level": "2",
+  "url": "eigenscribe-framework.html#sub-methodology-3-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "first-principles reasoning "
+},
+{
+  "id": "note-core-guidlines",
+  "level": "2",
+  "url": "eigenscribe-framework.html#note-core-guidlines",
+  "type": "Note",
+  "number": "1.1.0.1",
+  "title": "Core Guidelines.",
+  "body": " Core Guidelines    Strive to always explicitly justify foundational assumptions based on grounded empirical observation, physical law, or formally defined axioms. Anything that is not explictly decomposed into foundational components must include a note alerting the reader along with a reputatble source and further readings that do go into foundatoinal derivations. This allows flexibility for me (the author) as I learn material myself and as I add content to There and Back Again, especialy in the beginning phase of compiling this work.  Each inferrentiable step is traceable such that intermmediate reasoning can be sanity checked, reproduced, and communicated to other learners.  Constructed bridges between domains are constructed from shared primitives. Analogy alone is never sufficient.  Derived results and conclusions remain falisifiable and can be independently verified by the reader. This enables irrative correction and refinement of both assumptions and conclusions.    "
+},
+{
+  "id": "conventions",
+  "level": "1",
+  "url": "conventions.html",
+  "type": "Section",
+  "number": "2",
+  "title": "Conventions",
+  "body": " Conventions   Mathematical Notation   A reference for mathematical notation used throughout the notes.      vector space  Vectors in the vector space  .     phase space  generalized coordinates  conjugate momenta  A point in phase space where represents the generalized coordinates and represents the conjugate momenta .  For this work, we will assume denotes the magnitude of the coordinate vector and denotes the magnitude of the momentum vector, respectively.     Poisson bracket  The Poisson bracket between two scalar functions and .      Abbreviations    GA  geometric algebra  Geometric Algebra    psd  positive semi-definite  positive semi-definite    PSD  power spectral density  power spectral density    PIML  Physics-Informed Machine Learning    PINN  Physics-Informed Neural Networks     "
+},
+{
+  "id": "sec-hamiltonian-noether",
+  "level": "1",
+  "url": "sec-hamiltonian-noether.html",
   "type": "Section",
   "number": "1.1",
-  "title": "Introduction to Topology",
-  "body": " Introduction to Topology  topology  topological space    Note ID: 202511100001 | Tags: topology, mathematics, foundations   ⚠️ Prototype Note: This is a sample note with placeholder content for demonstration purposes.    Fundamental Concepts  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porttitor purus ac tortor commodo, vel scelerisque nisl consectetur.   Topological Space   A topological space is a pair where is a set and is a collection of subsets of satisfying:   and  The union of any collection of sets in is in  The intersection of any finite collection of sets in is in       Example  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.    Consider with .       Linked Notes:  ,    References:  ,    "
+  "title": "Hamiltonian Noether’s Theorem",
+  "body": " Hamiltonian Noether's Theorem  Hamiltonian mechanics  Noether's theorem    Note ID: 202605020001 | Tags:  <Hamiltonian mechanics> , <Noether's theorem>     Conserved in time  conserved in time    A quantity is said to be conserved in time if    Two Interpretations:     is a constant along the flow of :      is invariant along the flow of (up to a minus sign). In other words, generates a symmetry of .         🏡 Take-Home Message:    🖇️ Linked Notes:   🔖 References:  Physics with Elliot: The Most Beautiful Result in Classical Physics    "
 },
 {
-  "id": "sec-topology-intro-4-1",
+  "id": "sec-hamiltonian-noether-4-1",
   "level": "2",
-  "url": "sec-topology-intro.html#sec-topology-intro-4-1",
+  "url": "sec-hamiltonian-noether.html#sec-hamiltonian-noether-4-1",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Note ID: Tags: "
 },
 {
-  "id": "def-topological-space",
+  "id": "def-conserved-in-time",
   "level": "2",
-  "url": "sec-topology-intro.html#def-topological-space",
+  "url": "sec-hamiltonian-noether.html#def-conserved-in-time",
   "type": "Definition",
   "number": "1.1.1",
-  "title": "Topological Space.",
-  "body": " Topological Space   A topological space is a pair where is a set and is a collection of subsets of satisfying:   and  The union of any collection of sets in is in  The intersection of any finite collection of sets in is in    "
-},
-{
-  "id": "ex-discrete-topology",
-  "level": "2",
-  "url": "sec-topology-intro.html#ex-discrete-topology",
-  "type": "Example",
-  "number": "1.1.2",
   "title": "",
-  "body": "  Consider with .   "
+  "body": "  A quantity is said to be conserved in time if    Two Interpretations:     is a constant along the flow of :      is invariant along the flow of (up to a minus sign). In other words, generates a symmetry of .      "
 },
 {
-  "id": "sec-topology-intro-7-1",
-  "level": "2",
-  "url": "sec-topology-intro.html#sec-topology-intro-7-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Linked Notes: "
-},
-{
-  "id": "sec-topology-intro-7-2",
-  "level": "2",
-  "url": "sec-topology-intro.html#sec-topology-intro-7-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "References: "
-},
-{
-  "id": "sec-metric-spaces",
+  "id": "sec-entropy-taximony",
   "level": "1",
-  "url": "sec-metric-spaces.html",
+  "url": "sec-entropy-taximony.html",
   "type": "Section",
   "number": "1.2",
-  "title": "Metric Spaces",
-  "body": " Metric Spaces  metric space  analysis    Note ID: 202511100002 | Tags: analysis, metric-spaces, topology   ⚠️ Prototype Note: This is a sample note with placeholder content for demonstration purposes.    Definition  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.   Metric Space   A metric space is a pair where is a set and satisfies:   for all  if and only if  (symmetry)  (triangle inequality)       Euclidean Metric  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.    The Euclidean metric on is defined by:        Linked Notes:     References:  ,    "
+  "title": "Entropy Taximony",
+  "body": " Entropy Taximony  entropy  clauseius entropy  boltzmann entropy  gibbs entropy  shannon entropy    Note ID: 202604110002 | Tags:  <thermodynamics> , <statistical mechanics> , <information theory>   A taxomony of entropy across various domains.    Entropy in Thermodynamics   Clausius Entropy   The Clausius entropy is a change in the entropy of a system due to some reversible process where it absobes some amount of heat at a constant temperature :       Entropy in Statistical Mechanics   Boltzmann Entropy   The Boltzmann entropy of a macroscopic system in a state with multiplicity is given by:      Gibbs Entropy   The Gibbs entropy of a macroscopic system is defined in terms of the probabilities of being in microstate :       Entropy in Information Theory    The Shannon entropy of a discrete random variable with possible outcomes where and corresponding probablities is defined as:       🖇️ Linked Notes:    🔖 References:  Lecture 6: Entropy    "
 },
 {
-  "id": "sec-metric-spaces-4-1",
+  "id": "sec-entropy-taximony-7-1",
   "level": "2",
-  "url": "sec-metric-spaces.html#sec-metric-spaces-4-1",
+  "url": "sec-entropy-taximony.html#sec-entropy-taximony-7-1",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Note ID: Tags: "
 },
 {
-  "id": "def-metric-space",
+  "id": "def-clausius-entropy",
   "level": "2",
-  "url": "sec-metric-spaces.html#def-metric-space",
+  "url": "sec-entropy-taximony.html#def-clausius-entropy",
   "type": "Definition",
   "number": "1.2.1",
-  "title": "Metric Space.",
-  "body": " Metric Space   A metric space is a pair where is a set and satisfies:   for all  if and only if  (symmetry)  (triangle inequality)    "
+  "title": "Clausius Entropy.",
+  "body": " Clausius Entropy   The Clausius entropy is a change in the entropy of a system due to some reversible process where it absobes some amount of heat at a constant temperature :    "
 },
 {
-  "id": "ex-euclidean-metric",
+  "id": "def-boltzmann-entropy",
   "level": "2",
-  "url": "sec-metric-spaces.html#ex-euclidean-metric",
-  "type": "Example",
+  "url": "sec-entropy-taximony.html#def-boltzmann-entropy",
+  "type": "Definition",
   "number": "1.2.2",
-  "title": "",
-  "body": "  The Euclidean metric on is defined by:    "
+  "title": "Boltzmann Entropy.",
+  "body": " Boltzmann Entropy   The Boltzmann entropy of a macroscopic system in a state with multiplicity is given by:    "
 },
 {
-  "id": "sec-metric-spaces-7-1",
+  "id": "def-gibbs-entropy",
   "level": "2",
-  "url": "sec-metric-spaces.html#sec-metric-spaces-7-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Linked Notes: "
-},
-{
-  "id": "sec-metric-spaces-7-2",
-  "level": "2",
-  "url": "sec-metric-spaces.html#sec-metric-spaces-7-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "References: "
-},
-{
-  "id": "sec-continuous-functions",
-  "level": "1",
-  "url": "sec-continuous-functions.html",
-  "type": "Section",
-  "number": "1.3",
-  "title": "Continuous Functions",
-  "body": " Continuous Functions  continuity  continuous function    Note ID: 202511100003 | Tags: analysis, continuity, calculus   ⚠️ Prototype Note: This is a sample note with placeholder content.    Definition   Continuous Function   Let and be topological spaces. A function is continuous if for every open set , the preimage is open in .       Linked Notes:     References:     "
-},
-{
-  "id": "sec-continuous-functions-4-1",
-  "level": "2",
-  "url": "sec-continuous-functions.html#sec-continuous-functions-4-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Note ID: Tags: "
-},
-{
-  "id": "def-continuous-function",
-  "level": "2",
-  "url": "sec-continuous-functions.html#def-continuous-function",
+  "url": "sec-entropy-taximony.html#def-gibbs-entropy",
   "type": "Definition",
-  "number": "1.3.1",
-  "title": "Continuous Function.",
-  "body": " Continuous Function   Let and be topological spaces. A function is continuous if for every open set , the preimage is open in .   "
+  "number": "1.2.3",
+  "title": "Gibbs Entropy.",
+  "body": " Gibbs Entropy   The Gibbs entropy of a macroscopic system is defined in terms of the probabilities of being in microstate :    "
 },
 {
-  "id": "sec-continuous-functions-6-1",
+  "id": "def-shannon-entropy",
   "level": "2",
-  "url": "sec-continuous-functions.html#sec-continuous-functions-6-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Linked Notes: "
-},
-{
-  "id": "sec-continuous-functions-6-2",
-  "level": "2",
-  "url": "sec-continuous-functions.html#sec-continuous-functions-6-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "References: "
-},
-{
-  "id": "sec-convergence-sequences",
-  "level": "1",
-  "url": "sec-convergence-sequences.html",
-  "type": "Section",
-  "number": "1.4",
-  "title": "Convergence of Sequences",
-  "body": " Convergence of Sequences  sequences  convergence    Note ID: 202511100004 | Tags: analysis, sequences, limits   ⚠️ Prototype Note: This is a sample note with placeholder content.    Definition in Metric Spaces  Nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.   Convergence in Metric Spaces   A sequence in a metric space converges to if:       Cauchy Sequences  Quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.   Cauchy Sequence    is Cauchy if:        Linked Notes:  ,    References:  ,    "
-},
-{
-  "id": "sec-convergence-sequences-4-1",
-  "level": "2",
-  "url": "sec-convergence-sequences.html#sec-convergence-sequences-4-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Note ID: Tags: "
-},
-{
-  "id": "def-sequence-convergence",
-  "level": "2",
-  "url": "sec-convergence-sequences.html#def-sequence-convergence",
+  "url": "sec-entropy-taximony.html#def-shannon-entropy",
   "type": "Definition",
-  "number": "1.4.1",
-  "title": "Convergence in Metric Spaces.",
-  "body": " Convergence in Metric Spaces   A sequence in a metric space converges to if:    "
-},
-{
-  "id": "def-cauchy-sequence",
-  "level": "2",
-  "url": "sec-convergence-sequences.html#def-cauchy-sequence",
-  "type": "Definition",
-  "number": "1.4.2",
-  "title": "Cauchy Sequence.",
-  "body": " Cauchy Sequence    is Cauchy if:    "
-},
-{
-  "id": "sec-convergence-sequences-7-1",
-  "level": "2",
-  "url": "sec-convergence-sequences.html#sec-convergence-sequences-7-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
+  "number": "1.2.4",
   "title": "",
-  "body": "Linked Notes: "
+  "body": "  The Shannon entropy of a discrete random variable with possible outcomes where and corresponding probablities is defined as:    "
 },
 {
-  "id": "sec-convergence-sequences-7-2",
-  "level": "2",
-  "url": "sec-convergence-sequences.html#sec-convergence-sequences-7-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "References: "
-},
-{
-  "id": "sec-local-setup",
+  "id": "sec-physics-and-geometric-algebra",
   "level": "1",
-  "url": "sec-local-setup.html",
+  "url": "sec-physics-and-geometric-algebra.html",
   "type": "Section",
   "number": "2.1",
-  "title": "Getting Started",
-  "body": " Getting Started  setup  development    Note ID: 202511100005 | Tags: tutorial, setup, development  Learn how to work with your PreTeXt math journal and build your mathematical knowledge base.    Prerequisites  Before you begin, make sure you have these installed:     Python (version 3.10 or higher) Download from python.org . Check with python --version in your terminal.     PreTeXt CLI  Install with pip install pretext      Git (for version control and deployment) Download from git-scm.com . Check with git --version .      Building Your Project  The project uses a custom build script that compiles PreTeXt and injects custom CSS styling:  .\/build.sh  This script:   Runs pretext build web to generate HTML  Copies custom CSS and assets to output\/web\/  Injects custom styling into all HTML files   To view your journal locally, the PreTeXt Server workflow is already running on port 5000. Just open the Webview pane in Replit, or navigate to http:\/\/localhost:5000 in your browser.   Important: Always use .\/build.sh instead of pretext build directly to ensure your custom styling is applied!   "
+  "title": "Geometric Algebra and Physics",
+  "body": " Geometric Algebra and Physics   Exploring connections between geometric algebra and physics.    Physical Interpretations of the Wedge Product    Note ID: 202604110004 | Tags:  <geometric algebra> , <classical mechanics> , <vector calculus>     Wedge Product and Angular Momentum   The wedge product , as defined in , captures oriented area, analogous to angular momentum or flux in physical systems.     🖇️ Linked Notes:    🔖 References:  Hamiltonian Mechanics with Geometric Calculus     "
 },
 {
-  "id": "sec-local-setup-4-1",
+  "id": "subsec-wedge-product-and-physics-2-1",
   "level": "2",
-  "url": "sec-local-setup.html#sec-local-setup-4-1",
+  "url": "sec-physics-and-geometric-algebra.html#subsec-wedge-product-and-physics-2-1",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Note ID: Tags: "
 },
 {
-  "id": "subsec-prerequisites-3-1-1",
+  "id": "subsubsec-wedge-product-angular-momentum-2",
   "level": "2",
-  "url": "sec-local-setup.html#subsec-prerequisites-3-1-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
+  "url": "sec-physics-and-geometric-algebra.html#subsubsec-wedge-product-angular-momentum-2",
+  "type": "Claim",
+  "number": "2.1.1",
   "title": "",
-  "body": "Python "
+  "body": " The wedge product , as defined in , captures oriented area, analogous to angular momentum or flux in physical systems.  "
 },
 {
-  "id": "subsec-prerequisites-3-2-1",
-  "level": "2",
-  "url": "sec-local-setup.html#subsec-prerequisites-3-2-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "PreTeXt CLI "
-},
-{
-  "id": "subsec-prerequisites-3-3-1",
-  "level": "2",
-  "url": "sec-local-setup.html#subsec-prerequisites-3-3-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Git "
-},
-{
-  "id": "sec-github-deployment",
+  "id": "sec-feynmann-lectures",
   "level": "1",
-  "url": "sec-github-deployment.html",
-  "type": "Section",
-  "number": "2.2",
-  "title": "Deploying to GitHub Pages",
-  "body": " Deploying to GitHub Pages  deployment  GitHub Pages   Make your math journal publicly accessible by deploying to GitHub Pages. Your site will be available at https:\/\/username.github.io\/repository-name\/     Step 1: Create a GitHub Repository    Go to github.com and sign in    Click the + button in the top right, then New repository    Name your repository (e.g., my-zettelkasten )    Choose Public (required for free GitHub Pages)    Do NOT initialize with README (we already have files)    Click Create repository      Step 2: Connect Your Project to GitHub  In your terminal (Shell in Replit), run these commands:  git init git add . git commit -m \"Initial commit: PreTeXt math journal\" git branch -M main git remote add origin https:\/\/github.com\/username\/repository-name.git git push -u origin main  Replace username and repository-name with your actual GitHub username and repository name.   Note: You will be prompted for your GitHub username and password. For the password, use a Personal Access Token (not your actual password).    Step 3: Deploy to GitHub Pages  Choose one of two deployment methods: automatic GitHub Actions or manual git subtree.   Method A: Using GitHub Actions (Recommended)  This method automatically deploys your site every time you push changes to GitHub.  First, create the workflow directory:  mkdir -p .github\/workflows  Create a file .github\/workflows\/deploy.yml with this content:  name: Deploy to GitHub Pages on: push: branches: [main] workflow_dispatch: permissions: contents: read pages: write id-token: write jobs: build-and-deploy: runs-on: ubuntu-latest steps: - name: Checkout code uses: actions\/checkout@v4 - name: Setup Python uses: actions\/setup-python@v4 with: python-version: '3.11' - name: Install PreTeXt CLI run: pip install pretext - name: Build with custom styling run: chmod +x build.sh && .\/build.sh - name: Upload to GitHub Pages uses: actions\/upload-pages-artifact@v3 with: path: 'output\/web' - name: Deploy to GitHub Pages id: deployment uses: actions\/deploy-pages@v4  Then configure GitHub Pages:   Go to repository Settings → Pages  Under Source , select GitHub Actions   Now commit and push your workflow file:  git add .github\/workflows\/deploy.yml git commit -m \"Add GitHub Actions deployment\" git push  Your site will automatically build and deploy! Check the Actions tab in GitHub to monitor progress.  Your site will be live at https:\/\/username.github.io\/repository-name\/     Method B: Manual Deployment (Alternative)  If you prefer manual control, you can build locally and deploy manually:  .\/build.sh git add output\/web git commit -m \"Build for deployment\" git subtree push --prefix output\/web origin gh-pages  Then configure GitHub Pages to use the gh-pages branch:   Go to Settings → Pages  Under Source , select Deploy from a branch  Select branch gh-pages and folder \/ (root)    Note: Method A (GitHub Actions) is recommended for automatic updates!     Step 4: Updating Your Live Site  After making changes to your math journal source files:  .\/build.sh git add . git commit -m \"Add new topology notes\" git push   Using GitHub Actions (Method A): Your site updates automatically! GitHub will run the build script and deploy within 1-2 minutes.   Using Manual Deployment (Method B): Run the git subtree command again:  git subtree push --prefix output\/web origin gh-pages   "
-},
-{
-  "id": "subsec-create-github-repo-2-4-1",
-  "level": "2",
-  "url": "sec-github-deployment.html#subsec-create-github-repo-2-4-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Public "
-},
-{
-  "id": "subsec-updating-site-4",
-  "level": "2",
-  "url": "sec-github-deployment.html#subsec-updating-site-4",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Using GitHub Actions (Method A): "
-},
-{
-  "id": "subsec-updating-site-5",
-  "level": "2",
-  "url": "sec-github-deployment.html#subsec-updating-site-5",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Using Manual Deployment (Method B): "
-},
-{
-  "id": "sec-adding-content",
-  "level": "1",
-  "url": "sec-adding-content.html",
-  "type": "Section",
-  "number": "2.3",
-  "title": "Adding Content Easily",
-  "body": " Adding Content Easily  content creation  writing notes   Best practices for adding mathematical notes to your Zettelkasten journal.    Understanding the File Structure  Your content is organized in the source\/ directory:     main.ptx  Main document structure (usually don't edit)     ch-prototypes.ptx  Experimental notes and explorations     ch-tutorials.ptx  Step-by-step learning guides     ch-explanations.ptx  Conceptual explanations     ch-reference.ptx  Quick reference definitions     backmatter.ptx  Bibliography and index      Adding a New Note  To add a new mathematical note:    Choose the appropriate chapter file based on the Diataxis framework:   Prototype  New explorations, experiments  Tutorial  Learning-oriented guides  Explanation  Understanding-oriented content  Reference  Information-oriented quick lookup     Open the chapter file and add a new <section> :  <section xml:id=\"sec-your-topic\"> <title>Your Topic Title<\/title> <idx>keyword<\/idx> <p> Your mathematical content here... <\/p> <definition xml:id=\"def-example\"> <statement> <p> A <term>metric space<\/term> is... <\/p> <\/statement> <\/definition> <\/section>    Build and preview your changes:  .\/build.sh  Then refresh your browser at localhost:5000 to see the changes.      Writing Mathematical Content  PreTeXt uses LaTeX for mathematical notation. Here are common patterns:   Inline Math  Use <m> tags for inline math:   <p> The function <m>f(x) = x^2 + 1<\/m> is continuous. <\/p>    Display Math  Use <me> for displayed equations:   <me> \\int_a^b f(x) \\, dx = F(b) - F(a) <\/me>    Theorems and Definitions  <theorem xml:id=\"thm-fundamental\"> <title>Fundamental Theorem of Calculus<\/title> <statement> <p> If <m>f<\/m> is continuous on <m>[a,b]<\/m>... <\/p> <\/statement> <\/theorem>     Linking Notes (Zettelkasten Method)  Connect related notes using cross-references:  <p> This builds on the concept from <xref ref=\"sec-topology-intro\"\/>. <\/p>  The ref attribute should match the xml:id of the section you want to link to.    Adding Citations  To cite a source, first add it to backmatter.ptx :  <biblio type=\"raw\" xml:id=\"rudin1976\"> Rudin, Walter. Principles of Mathematical Analysis. McGraw-Hill, 1976. <\/biblio>  Then cite it in your content:  <p> For more details, see <xref ref=\"rudin1976\"\/>. <\/p>    Recommended Workflow     Start with rough ideas  Add them to the Prototypes chapter     Build incrementally  Add small sections often, don't wait for perfection     Link as you go  Use <xref> to connect related concepts     Reorganize later  Move mature notes from Prototypes to Explanations or Reference     Commit frequently  Use Git to track your progress and changes      Quick Reference  Common commands you'll use:   Common Commands    Command  Purpose    .\/build.sh  Build project with custom CSS    git add .  Stage all changes    git commit -m \"message\"  Save changes with message    git push  Upload to GitHub      "
-},
-{
-  "id": "subsec-adding-new-note-3-1-2-1-1",
-  "level": "2",
-  "url": "sec-adding-content.html#subsec-adding-new-note-3-1-2-1-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Prototype "
-},
-{
-  "id": "subsec-adding-new-note-3-1-2-2-1",
-  "level": "2",
-  "url": "sec-adding-content.html#subsec-adding-new-note-3-1-2-2-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Tutorial "
-},
-{
-  "id": "subsec-adding-new-note-3-1-2-3-1",
-  "level": "2",
-  "url": "sec-adding-content.html#subsec-adding-new-note-3-1-2-3-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Explanation "
-},
-{
-  "id": "subsec-adding-new-note-3-1-2-4-1",
-  "level": "2",
-  "url": "sec-adding-content.html#subsec-adding-new-note-3-1-2-4-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Reference "
-},
-{
-  "id": "subsec-workflow-tips-2-1-1",
-  "level": "2",
-  "url": "sec-adding-content.html#subsec-workflow-tips-2-1-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Start with rough ideas "
-},
-{
-  "id": "subsec-workflow-tips-2-2-1",
-  "level": "2",
-  "url": "sec-adding-content.html#subsec-workflow-tips-2-2-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Build incrementally "
-},
-{
-  "id": "subsec-workflow-tips-2-3-1",
-  "level": "2",
-  "url": "sec-adding-content.html#subsec-workflow-tips-2-3-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Link as you go "
-},
-{
-  "id": "subsec-workflow-tips-2-4-1",
-  "level": "2",
-  "url": "sec-adding-content.html#subsec-workflow-tips-2-4-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Reorganize later "
-},
-{
-  "id": "subsec-workflow-tips-2-5-1",
-  "level": "2",
-  "url": "sec-adding-content.html#subsec-workflow-tips-2-5-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Commit frequently "
-},
-{
-  "id": "subsec-quick-reference-3",
-  "level": "2",
-  "url": "sec-adding-content.html#subsec-quick-reference-3",
-  "type": "Table",
-  "number": "2.3.1",
-  "title": "Common Commands",
-  "body": " Common Commands    Command  Purpose    .\/build.sh  Build project with custom CSS    git add .  Stage all changes    git commit -m \"message\"  Save changes with message    git push  Upload to GitHub    "
-},
-{
-  "id": "sec-placeholder-explanations",
-  "level": "1",
-  "url": "sec-placeholder-explanations.html",
+  "url": "sec-feynmann-lectures.html",
   "type": "Section",
   "number": "3.1",
-  "title": "Add Your Explanations Here",
-  "body": " Add Your Explanations Here  This chapter will contain your deeper explanations and understanding of mathematical concepts. Add new sections to document your insights and conceptual breakthroughs.  "
+  "title": "Feynman Lectures",
+  "body": " Feynman Lectures   The vector potential provides a mathematical framework for electromagnetism that can be generalized to hydrodynamics, which is inherently time dependent. This conceptual transition is discussed in The Feynman Lectures on Physics , Vol. II, Ch. 15, “The Vector Potential.”      Static Electromagnetic Variables (Non-Generalizable)    Concept  Mathematical Form    Electric field is curl-free       Electrostatic potential       Static charge distribution         Generalized Dynamic Variables (Hydrodynamic \/ Electrodynamic)    Concept  Mathematical Form    Velocity or vector potential field       Non-zero circulation \/ vorticity       Time-dependent evolution          Adapted from Table 15-1 in from The Feynman Lectures on Physics , Vol. II, Ch. 15, “The Vector Potential,” Section 15-5.  "
 },
 {
-  "id": "sec-common-definitions",
+  "id": "claim-vector-potential-generalization",
+  "level": "2",
+  "url": "sec-feynmann-lectures.html#claim-vector-potential-generalization",
+  "type": "Claim",
+  "number": "3.1.1",
+  "title": "",
+  "body": " The vector potential provides a mathematical framework for electromagnetism that can be generalized to hydrodynamics, which is inherently time dependent. This conceptual transition is discussed in The Feynman Lectures on Physics , Vol. II, Ch. 15, “The Vector Potential.”  "
+},
+{
+  "id": "table-static-electromagnetic-variables",
+  "level": "2",
+  "url": "sec-feynmann-lectures.html#table-static-electromagnetic-variables",
+  "type": "Table",
+  "number": "3.1.2",
+  "title": "Static Electromagnetic Variables (Non-Generalizable)",
+  "body": " Static Electromagnetic Variables (Non-Generalizable)    Concept  Mathematical Form    Electric field is curl-free       Electrostatic potential       Static charge distribution       "
+},
+{
+  "id": "table-generalized-dynamic-electromagnetic-variables",
+  "level": "2",
+  "url": "sec-feynmann-lectures.html#table-generalized-dynamic-electromagnetic-variables",
+  "type": "Table",
+  "number": "3.1.3",
+  "title": "Generalized Dynamic Variables (Hydrodynamic \/ Electrodynamic)",
+  "body": " Generalized Dynamic Variables (Hydrodynamic \/ Electrodynamic)    Concept  Mathematical Form    Velocity or vector potential field       Non-zero circulation \/ vorticity       Time-dependent evolution       "
+},
+{
+  "id": "sec-pre-quantum",
   "level": "1",
-  "url": "sec-common-definitions.html",
+  "url": "sec-pre-quantum.html",
   "type": "Section",
   "number": "4.1",
-  "title": "Common Definitions",
-  "body": " Common Definitions  This section contains frequently referenced definitions and theorems.  "
+  "title": "Pre-Quantum",
+  "body": " Pre-Quantum   Joseph-Louis Lagrange  The Lagrangian  the action    Years: 1736-1813   Citizenship: Italian-French   The Hook: Reformulated Newton's laws into a scalar optimization problem, now known as the Principle of Least Action.   Core Contribution: Introduced the Lagrangian function and defined the action .    "
 },
 {
-  "id": "backmatter-2",
+  "id": "sub-lagrange-joseph-louis-4-4",
+  "level": "2",
+  "url": "sec-pre-quantum.html#sub-lagrange-joseph-louis-4-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Lagrangian function action "
+},
+{
+  "id": "sec-post-quantum",
   "level": "1",
-  "url": "backmatter-2.html",
+  "url": "sec-post-quantum.html",
+  "type": "Section",
+  "number": "4.2",
+  "title": "Post-Quantum",
+  "body": " Post-Quantum    "
+},
+{
+  "id": "sec-qc-practice-set-1",
+  "level": "1",
+  "url": "sec-qc-practice-set-1.html",
+  "type": "Section",
+  "number": "5.1",
+  "title": "Introductino to Quantum Computing with Qiskit",
+  "body": " Introductino to Quantum Computing with Qiskit    Note ID: 202604120001 | Tags:  <tensor products> , <Qiskit> , <state vectors>     Problem Set 1   Imports   from quiskit.quantum_info import Statevector, Operator import numpy as np from numpy import sqrt from IPython.display import display, Latex, Math from qiskit import __version__ print(f\"Qiskit version: {__version__}\")     Tensor Products    Use Qiskit to compute the tensor product . Your solution must construct the state and print out the amplitudes in the computational basis.    Use   Statevector.from_label(\"-\") for    Statevector.from_label(\"r\") for        # Declare state vectors minus = Statevector.from_label(\"-\") plus_i = Statevector.from_label(\"r\") # Compute the tensor product and display the result display(minus.tensor(plus_i).draw(\"latex\"))          Given the state write the state vector ordering explicitly.    🎗️ Quiskit starts its indexing (qubit 0) from the right-hand side.     zero = Statevector([1, 0]) one = Statevector([0, 1]) plus = Statevector.from_label(\"+\") display((zero ^ one ^ plus).draw(\"latex\"))          "
+},
+{
+  "id": "sec-qc-practice-set-1-2-1",
+  "level": "2",
+  "url": "sec-qc-practice-set-1.html#sec-qc-practice-set-1-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Note ID: Tags: "
+},
+{
+  "id": "eg-tensor-products-2",
+  "level": "2",
+  "url": "sec-qc-practice-set-1.html#eg-tensor-products-2",
+  "type": "Exercise",
+  "number": "5.1.1",
+  "title": "",
+  "body": "  Use Qiskit to compute the tensor product . Your solution must construct the state and print out the amplitudes in the computational basis.    Use   Statevector.from_label(\"-\") for    Statevector.from_label(\"r\") for        # Declare state vectors minus = Statevector.from_label(\"-\") plus_i = Statevector.from_label(\"r\") # Compute the tensor product and display the result display(minus.tensor(plus_i).draw(\"latex\"))       "
+},
+{
+  "id": "eg-tensor-products-3",
+  "level": "2",
+  "url": "sec-qc-practice-set-1.html#eg-tensor-products-3",
+  "type": "Exercise",
+  "number": "5.1.2",
+  "title": "",
+  "body": "  Given the state write the state vector ordering explicitly.    🎗️ Quiskit starts its indexing (qubit 0) from the right-hand side.     zero = Statevector([1, 0]) one = Statevector([0, 1]) plus = Statevector.from_label(\"+\") display((zero ^ one ^ plus).draw(\"latex\"))       "
+},
+{
+  "id": "sec-git",
+  "level": "1",
+  "url": "sec-git.html",
+  "type": "Section",
+  "number": "6.1",
+  "title": "Terminal Cheat Sheet",
+  "body": " Terminal Cheat Sheet    Note ID: 202604120002 | Tags:  <git>  <bash>  <terminal>     Local Git Reset  Multiline version (safter, less likely to accidentally earase local changes):   git fetch origin git checkout main # or whatever branch you're using git reset --hard origin\/main git clean -fd # removes untracked files & folders   One-liner (⚠️ use with caution!):   git fetch origin && git reset --hard origin\/main && git clean -fd     Update pip requirements.txt   pip install -r requirements.txt --upgrade pip freeze > requirements.txt    "
+},
+{
+  "id": "sec-git-2-1",
+  "level": "2",
+  "url": "sec-git.html#sec-git-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Note ID: Tags: "
+},
+{
+  "id": "sec-python-gold-standards",
+  "level": "1",
+  "url": "sec-python-gold-standards.html",
+  "type": "Section",
+  "number": "7.1",
+  "title": "Python Gold Standards",
+  "body": " Python Gold Standards  python    Note ID: 202605080001 | Tags:  <python>     Python Rule of Thumb   The primary goal is to routinely write scripts that read like math and code.  If someone scrolls your script top-to-bottom, the conceptual story should flow:  What exists?  What are you allowed to call?  How does it work?  Proof it works.       Gold Standard Python Template   # src\/example.py \"\"\" Script descriptiion Author: Date: \"\"\" # imports and typing __future__ import annotations # Type hinting __all__ = [\"public_function\"] # Explicitly declare public API # ----------------------------------------------------------------------------------------------------------- # 0️⃣ Typing helpers \/ protocols \/ constants (if needed) # ----------------------------------------------------------------------------------------------------------- # ----------------------------------------------------------------------------------------------------------- # 1️⃣ Core definitions # ----------------------------------------------------------------------------------------------------------- # ----------------------------------------------------------------------------------------------------------- # 2️⃣ Public API (functions users are meant to call) # ----------------------------------------------------------------------------------------------------------- # ----------------------------------------------------------------------------------------------------------- # 3️⃣ Private helpers # ----------------------------------------------------------------------------------------------------------- # ----------------------------------------------------------------------------------------------------------- # 4️⃣ Smoke tests \/ example usage # ----------------------------------------------------------------------------------------------------------- # ----------------------------------------------------------------------------------------------------------- # 5️⃣ Entry point # -----------------------------------------------------------------------------------------------------------     Fundamental Features   Numbered Emoji Sectioning    Helps to make long scripts scannable.  Meant to be used as semantic anchor points, not decoration.      if name == \"__main__\"    Placed at the bottom of the script.   ✔️ Only use for:  Running smoke tests.  Minimal demonstrations.  Sanity checks.      ❌ Never use for:  Running large-scale experiments.  Running training loops.  Running inference pipelines.         def main() -> None:    Always exists.  Orchestrates calls to public API for smoke tests, demos, sanity checks.  Never contains math or logic explicitly.     def main() -> None: _smoke_test()     \"Big functions\" to bundle logic.  Use large functions to bundle related logic together.    Type Annotations Everywhere (within reason)  🔑 Key Habits to Remember:  Use Tensor , not torch.Tensor , in type annotations.  Annotate scalars ( float | Tensor ) when physically meaningul.   Use Final for constants:   omega: float | Final[Tensor] = 1.0        NumPy-Style Docstrings  These should always be present on:  public functions.  public classes.  nontrivial private helpers.       Minimal viable structure:   def public_function(x: Tensor) -> Tensor: \"\"\" Short description. Parameters ---------- x : Tensor Description of x. Returns ------- Tensor Description of return value. \"\"\" pass        "
+},
+{
+  "id": "sec-python-gold-standards-3-1",
+  "level": "2",
+  "url": "sec-python-gold-standards.html#sec-python-gold-standards-3-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Note ID: Tags: "
+},
+{
+  "id": "subsec-python-rule-of-thumb-2",
+  "level": "2",
+  "url": "sec-python-gold-standards.html#subsec-python-rule-of-thumb-2",
+  "type": "Note",
+  "number": "7.1.1",
+  "title": "",
+  "body": " The primary goal is to routinely write scripts that read like math and code.  If someone scrolls your script top-to-bottom, the conceptual story should flow:  What exists?  What are you allowed to call?  How does it work?  Proof it works.    "
+},
+{
+  "id": "subsec-key-features-2",
+  "level": "2",
+  "url": "sec-python-gold-standards.html#subsec-key-features-2",
+  "type": "Note",
+  "number": "7.1.2",
+  "title": "Numbered Emoji Sectioning.",
+  "body": " Numbered Emoji Sectioning    Helps to make long scripts scannable.  Meant to be used as semantic anchor points, not decoration.    "
+},
+{
+  "id": "subsec-key-features-3",
+  "level": "2",
+  "url": "sec-python-gold-standards.html#subsec-key-features-3",
+  "type": "Note",
+  "number": "7.1.3",
+  "title": "<code class=\"code-inline tex2jax_ignore\">if name == \"__main__\"<\/code>.",
+  "body": " if name == \"__main__\"    Placed at the bottom of the script.   ✔️ Only use for:  Running smoke tests.  Minimal demonstrations.  Sanity checks.      ❌ Never use for:  Running large-scale experiments.  Running training loops.  Running inference pipelines.       "
+},
+{
+  "id": "subsec-key-features-4",
+  "level": "2",
+  "url": "sec-python-gold-standards.html#subsec-key-features-4",
+  "type": "Note",
+  "number": "7.1.4",
+  "title": "<code class=\"code-inline tex2jax_ignore\">def main() -&gt; None:<\/code>.",
+  "body": " def main() -> None:    Always exists.  Orchestrates calls to public API for smoke tests, demos, sanity checks.  Never contains math or logic explicitly.     def main() -> None: _smoke_test()   "
+},
+{
+  "id": "subsec-key-features-5",
+  "level": "2",
+  "url": "sec-python-gold-standards.html#subsec-key-features-5",
+  "type": "Note",
+  "number": "7.1.5",
+  "title": "\"Big functions\" to bundle logic..",
+  "body": " \"Big functions\" to bundle logic.  Use large functions to bundle related logic together.  "
+},
+{
+  "id": "subsec-key-features-6",
+  "level": "2",
+  "url": "sec-python-gold-standards.html#subsec-key-features-6",
+  "type": "Note",
+  "number": "7.1.6",
+  "title": "Type Annotations Everywhere (within reason).",
+  "body": " Type Annotations Everywhere (within reason)  🔑 Key Habits to Remember:  Use Tensor , not torch.Tensor , in type annotations.  Annotate scalars ( float | Tensor ) when physically meaningul.   Use Final for constants:   omega: float | Final[Tensor] = 1.0      "
+},
+{
+  "id": "subsec-key-features-7",
+  "level": "2",
+  "url": "sec-python-gold-standards.html#subsec-key-features-7",
+  "type": "Note",
+  "number": "7.1.7",
+  "title": "NumPy-Style Docstrings.",
+  "body": " NumPy-Style Docstrings  These should always be present on:  public functions.  public classes.  nontrivial private helpers.       Minimal viable structure:   def public_function(x: Tensor) -> Tensor: \"\"\" Short description. Parameters ---------- x : Tensor Description of x. Returns ------- Tensor Description of return value. \"\"\" pass      "
+},
+{
+  "id": "gls-main",
+  "level": "1",
+  "url": "gls-main.html",
+  "type": "Glossary",
+  "number": "",
+  "title": "Glossary",
+  "body": " Glossary   First-Principles Reasoning  first-principles reasoning   A method of reasoning in which claims, hypotheses, models, or systems are explicitly decomposed into their most fundamental, independently verifiable assumptions, and conclusions are derived via transparent, stepwise inferece based on those assumptions . This helps ensure the fidelity of the reasoning process and that conclusions are traceable and reproducible by the reader.     Numerical Integration  numerical integration   Methods for approximating definite integrals.     Poisson Bracket  Poisson bracket  The Poisson bracket provides a fundamental operation in Hamiltonian mechanics and symplectic geometry.    Power Spectral Density  power spectral density  A power spectral density is a function describing how the power of a signal is distributed over frequency .    Regression Methods  regression methods   Methods for fitting models to data.    xml:id=\"gls-root-finding\"> Root-Finding Algorithms  root-finding algorithms  Methods for solving equations of the form \\(f(x) = 0\\).   "
+},
+{
+  "id": "gls-poisson-brackets-3",
+  "level": "2",
+  "url": "gls-main.html#gls-poisson-brackets-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Poisson bracket "
+},
+{
+  "id": "gls-power-spectral-density-3",
+  "level": "2",
+  "url": "gls-main.html#gls-power-spectral-density-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "power spectral density "
+},
+{
+  "id": "backmatter-3",
+  "level": "1",
+  "url": "backmatter-3.html",
   "type": "Index",
   "number": "",
   "title": "Index",
   "body": " Index   "
 },
 {
-  "id": "references",
+  "id": "appendix-bibliography",
   "level": "1",
-  "url": "references.html",
+  "url": "appendix-bibliography.html",
   "type": "References",
   "number": "",
-  "title": "Bibliography",
-  "body": " Bibliography  Luhmann, Niklas. Kommunikation mit Zettelkästen . Universität Bielefeld, 1984.  Munkres, James R. Topology . 2nd edition, Prentice Hall, 2000. ISBN: 978-0131816299.  Rudin, Walter. Principles of Mathematical Analysis . 3rd edition, McGraw-Hill, 1976. International Series in Pure and Applied Mathematics. ISBN: 978-0070542358.  Spivak, Michael. Calculus . 4th edition, Publish or Perish, 2008. ISBN: 978-0914098911.  Apostol, Tom M. Mathematical Analysis . 2nd edition, Addison-Wesley, 1974. ISBN: 978-0201002881.  "
+  "title": "References",
+  "body": "  Brunton, S. L., & Kutz, J. N. (2022). Data-Driven Science and Engineering: Machine Learning, Dynamical Systems, and Control . Cambridge University Press.  Faculty of Khan (2018). Introduction to Heat Transfer . YouTube.   Feynman, R. P., Leighton, R. B., & Sands, M. (1964, 2006, 2013). The Feynman Lectures on Physics, Vol. II, Ch. 15: The Vector Potential . California Institute of Technology.    Hestenes, D. (1993). Hamiltonian Mechanics with Geometric Calculus, Clifford Algebras and Their Applications in Mathematical Physics (pp. 203-214). Springer.   Hestenes, D. (1998). Chapter 1: Synopsis of Geometric Algebra, New Foundations for Mathematical Physics (pp. 1-27). davidhestenes.net .     Paiva, C. R. (2005, August 31). Passive Lorentz transformations with spacetime algebra.  arXiv.org .   Physics with Elliot (2022). The Most Beautiful Result in Classical Mechanics . YouTube.   Schwartz., M. (2021). Lecture 6: Entropy . Harvard University.   "
 },
 {
-  "id": "backmatter-4",
+  "id": "backmatter-5",
   "level": "1",
-  "url": "backmatter-4.html",
+  "url": "backmatter-5.html",
   "type": "Colophon",
   "number": "",
   "title": "Colophon",
-  "body": " This mathematical journal was created using PreTeXt ( ). Built with the Zettelkasten method for networked mathematical thinking.   Version:    "
+  "body": " This digital research journal was created using PreTeXt ( ). Built with the Zettelkasten method for networked mathematical thinking.   Version:    "
 },
 {
-  "id": "backmatter-4-2",
+  "id": "backmatter-5-2",
   "level": "2",
-  "url": "backmatter-4.html#backmatter-4-2",
+  "url": "backmatter-5.html#backmatter-5-2",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
