@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-feynmann-lectures"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <title>Feynman Lectures</title>
+
+    <claim xml:id="claim-vector-potential-generalization">
+        <p>
+            The vector potential provides a mathematical framework for
+            electromagnetism that can be generalized to hydrodynamics,
+            which is inherently time dependent. This conceptual transition
+            is discussed in <em>The Feynman Lectures on Physics</em>,
+            Vol. II, Ch. 15, “The Vector Potential.”
+        </p>
+    </claim>
+
+    <sbsgroup>
+
+        <sidebyside widths="48% 48%">
+
+            <table xml:id="table-static-electromagnetic-variables">
+                <title>
+                    Static Electromagnetic Variables
+                    (Non-Generalizable)
+                </title>
+
+                <tabular>
+                    <row>
+                        <cell><em>Concept</em></cell>
+                        <cell><em>Mathematical Form</em></cell>
+                    </row>
+
+                    <row>
+                        <cell>Electric field is curl-free</cell>
+                        <cell>
+                            <m>\qquad\qquad\qquad\qquad</m>
+                        </cell>
+                    </row>
+
+                    <row>
+                        <cell>Electrostatic potential</cell>
+                        <cell>
+                            <m>\qquad\qquad\qquad\qquad</m>
+                        </cell>
+                    </row>
+
+                    <row>
+                        <cell>Static charge distribution</cell>
+                        <cell>
+                            <m>\qquad\qquad\qquad\qquad</m>
+                        </cell>
+                    </row>
+
+                </tabular>
+            </table>
+
+            <table xml:id="table-generalized-dynamic-electromagnetic-variables">
+                <title>
+                    Generalized Dynamic Variables
+                    (Hydrodynamic / Electrodynamic)
+                </title>
+
+                <tabular>
+                    <row>
+                        <cell><em>Concept</em></cell>
+                        <cell><em>Mathematical Form</em></cell>
+                    </row>
+
+                    <row>
+                        <cell>Velocity or vector potential field</cell>
+                        <cell>
+                            <m>\qquad\qquad\qquad\qquad</m>
+                        </cell>
+                    </row>
+
+                    <row>
+                        <cell>Non-zero circulation / vorticity</cell>
+                        <cell>
+                            <m>\qquad\qquad\qquad\qquad</m>
+                        </cell>
+                    </row>
+
+                    <row>
+                        <cell>Time-dependent evolution</cell>
+                        <cell>
+                            <m>\qquad\qquad\qquad\qquad</m>
+                        </cell>
+                    </row>
+
+                </tabular>
+            </table>
+
+        </sidebyside>
+
+        
+
+    </sbsgroup>
+
+    <p>
+        Adapted from Table 15-1 in
+        <xref ref="feynman1964vectorpotential"/>
+        from <em>The Feynman Lectures on Physics</em>,
+        Vol. II, Ch. 15, “The Vector Potential,”
+        Section 15-5.
+    </p>
+
+</section>
