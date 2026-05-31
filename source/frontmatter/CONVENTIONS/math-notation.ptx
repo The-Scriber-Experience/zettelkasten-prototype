@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<subsection xml:id="sub-math-notation" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Mathematical Notation</title>
+    
+    <introduction>
+        <p>
+            A reference for mathematical notation used throughout the notes.
+        </p>
+    </introduction>
+
+    <dl>
+        <li>
+            <title><m>\mathbf{u},\mathbf{v}</m></title>
+            <idx>vector space</idx>
+            <p> 
+                Vectors in the <em>vector space</em> <m>\mathcal{V}_n\in\mathbb{R}^n</m>.
+            </p>
+        </li>
+        <li>
+            <title><m>(\mathbf{q},\mathbf{p})</m></title>
+            <idx>phase space</idx>
+            <idx>generalized coordinates</idx>
+            <idx>conjugate momenta</idx>
+            <p>
+                A point in <em>phase space</em> where <m>\mathbf{q}</m> represents the <em>generalized coordinates</em> and <m>\mathbf{p}</m> represents the <em>conjugate momenta</em>.
+            </p>
+            <p> 
+                For this work, we will assume <m>q=\|\mathbf{q}\|</m> denotes the magnitude of the coordinate vector and <m>p=\|\mathbf{p}\|</m> denotes the magnitude of the momentum vector, respectively.
+            </p>
+        </li>
+        <li>
+            <title><m>\{A, B\}</m></title>
+            <idx>Poisson bracket</idx>
+            <p>
+                The <em>Poisson bracket</em> between two scalar functions <m>A(\mathbf{q},\mathbf{p})</m> and <m>B(\mathbf{q},\mathbf{p})</m>.
+            </p>
+        </li>
+    </dl>
+
+    
+</subsection>
