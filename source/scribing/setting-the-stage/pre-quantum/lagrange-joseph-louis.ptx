@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<subsection xml:id="sub-lagrange-joseph-louis" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Joseph-Louis Lagrange</title>
+    <idx>The Lagrangian</idx>
+    <idx>the action</idx>
+
+    <introduction>
+        <p>
+            <strong>Years:</strong> 1736-1813
+        </p>
+        <p>
+            <strong>Citizenship:</strong> Italian-French
+        </p>
+        <p>
+            <strong>The Hook:</strong> Reformulated Newton's laws into a scalar optimization problem, now known as the Principle of Least Action.
+        </p>
+        <p>
+            <strong>Core Contribution:</strong> Introduced the <term>Lagrangian function</term> and defined the <term>action</term>.
+        </p>
+    </introduction>
+    
+</subsection>
