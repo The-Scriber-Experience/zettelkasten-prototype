@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-cheat-sheets" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>My Cheat Sheets</title>
+  <introduction>
+    <!-- introductory text here -->
+  </introduction>
+
+  <xi:include href="sec-terminal-cheat-sheet.ptx" />
+
+</chapter>
