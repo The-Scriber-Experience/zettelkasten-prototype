@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frontmatter xml:id="frontmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <bibinfo>
+  
+    <author> 
+      <personname />
+      <affiliation>
+        <organization>Eigenscribe Inc</organization>
+      </affiliation>
+    </author>
+    <date>
+      <today />
+    </date>
+
+    <website>
+      <url href="#">https://eigenscribe.github.io/there-and-back-again/research-journal.html</url>
+    </website>
+
+    <copyright>
+      <year>2025<ndash />2026</year>
+      <holder>Eigenscribe Inc</holder>
+      <shortlicense> 
+        Please cite this work as: "There and Back Again: A Zettelkasten for Eigenscribe Inc, 2025-2026."
+      </shortlicense>
+    </copyright>
+  
+  </bibinfo>
+
+  <titlepage>
+    <titlepage-items />
+  </titlepage>
+
+  <introduction>
+    <figure xml:id="cover-image">
+      <image source="cover.png" width="60%" />
+      <shortdescription>chat GPT's summary of my year in 2025.</shortdescription>
+    </figure>
+  </introduction>
+
+  <abstract>
+    <p>
+      <em>There and Back Again</em> is a <pretext />-powered personal knowledge management system developed by Eigenscribe Inc that demonstrates an integrated workflow for technical learning, documentation, and research.
+      The project spans interdisciplinary STEM domains, including neuroscience, statistical mechanics, and machine learning, and emphasizes the construction of explicit "concept bridges" between fields. 
+      At its core is the <em>Eigenscribe methodology</em>, which combines AI-assisted development with <term>first-principles logic</term> to produce transparent, reproducible, and interrpetable reasoning.
+      This system functions as a scalable, portable, and self-correcting intellectual infrastructure designed to support independent research and professional development in remote, asynchronous enviornments.
+    </p>
+  </abstract>
+
+  <preface xml:id="preface">
+
+    <title>Preface</title>
+
+    <!-- 1. Eigenscribe Framework (core system layer) -->
+    <section xml:id="eigenscribe-framework">
+      <title>The Eigenscribe Framework</title>
+      <idx>first-principles reasoning</idx>
+
+      <introduction>
+        <p>
+          The Eigenscribe framework is a structured appraoch to reasoning that aims to empower independent learning and research by emphasizing transparency and reporducibility. This is particularly important at the dawn of the AI era where the ability to sanity check is vital not onlyy the individual but for the fidelity of the scientific ecosystem as a whole.
+        </p>
+
+        <p>
+          At its core, the framework strives to enable responsible AI-assisted developing in a way that maximizes the benefits reaped from AI without sacrificing quality nor a human-supervised understanding of conclusions and systems derived. Rather than requiring that all ideas originate from fully reduced assumptions, the system allows exploratory and heuristic reasoning, which is progressively refined into formal, reproducible forms.
+        </p>
+      </introduction>
+
+      <!-- Include your dedicated first-principles file -->
+      <xi:include href="first-principles-framework.ptx"/>
+
+      <conclusion>
+        <p>
+          The Eigenscribe Framework will be routinely iterated over time.
+        </p>
+      </conclusion>
+
+    </section>
+
+    <!-- 2. Conventions (keep what you already built) -->
+    <section xml:id="conventions">
+      <title>Conventions</title>
+
+      <xi:include href="CONVENTIONS/math-notation.ptx"/>
+      <xi:include href="CONVENTIONS/abbreviations.ptx"/>
+
+    </section>
+
+  </preface>
+  
+</frontmatter>
