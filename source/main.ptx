@@ -9,16 +9,15 @@
     <subtitle>A Zettelkasten for Eigenscribe Inc</subtitle>
 
     <!-- Include frontmatter -->
-    <xi:include href="./frontmatter.ptx" />
+    <xi:include href="./frontmatter/frontmatter.ptx" />
 
-    <!-- Include chapters organized by Diataxis categories -->
-    <xi:include href="./ch-prototypes.ptx" />
-    <xi:include href="./ch-tutorials.ptx" />
-    <xi:include href="./ch-explanations.ptx" />
-    <xi:include href="./ch-reference.ptx" />
+    <!-- Include main parts -->
+    <xi:include href="./scribing/pt-scribing.ptx" />
+    <xi:include href="./practice-problems/pt-practice-problems.ptx" />
+    <xi:include href="./meta/pt-meta.ptx" />
 
     <!-- Include backmatter -->
-    <xi:include href="./backmatter.ptx" />
+    <xi:include href="./backmatter/backmatter.ptx" />
 
   </book>
 </pretext>
